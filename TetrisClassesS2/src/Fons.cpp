@@ -26,6 +26,7 @@ void Fons::inicialitzar(const char *rutaFons)
     // i la última fila que s'han d'inicialitzar a gris. D'aquesta manera marquem que tot el tauler està buit. Per fer-ho podeu utilitzar
     // els mètodes posarNegre() i posarGris()
 
+
 }
 void Fons::posarNegre()
 {

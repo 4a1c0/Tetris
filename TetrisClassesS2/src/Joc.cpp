@@ -32,7 +32,7 @@ int aleatori(int min, int max)
 
 void tractarEvent(int tecla, FigTetris& fig, Fons& fons)
 {
-	// TODO
+	// TO DO
 	// Adaptar el mateix tractament de cada possible event (tecla) que vau fer a la sessió 1, modificant el codi per
 	// utilitzar els mètodes de les classes FigTetris i Fons
 }
