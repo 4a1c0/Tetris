@@ -32,9 +32,27 @@ int aleatori(int min, int max)
 
 void tractarEvent(int tecla, FigTetris& fig, Fons& fons)
 {
-	// TO DO
+
 	// Adaptar el mateix tractament de cada possible event (tecla) que vau fer a la sessió 1, modificant el codi per
 	// utilitzar els mètodes de les classes FigTetris i Fons
+
+	switch(tecla)
+	{
+		case TECLA_ESQUERRA:
+			if (fig.moureFig(-1, 0, fons))
+                fig.moureFig(-1, 0, fons);
+			break;
+		case TECLA_DRETA:
+			if (fig.moureFig(1, 0, fons))
+				fig.moureFig(1, 0, fons);
+			break;
+		case TECLA_ABAIX:
+			if (fig.moureFig(0, 2, fons))
+				fig.moureFig(0, 2, fons);
+			break;
+		default:
+		    break;
+	}
 }
 
 void crearFigTetris(FigTetris* figTetrisActual)
@@ -42,17 +60,27 @@ void crearFigTetris(FigTetris* figTetrisActual)
     // TODO
     // Heu de crear totes les figures del tetris utilitzant el mètode create de la classe FigTetris i guardar cadascuna de les figures
     // en una de les posicions de l'array de figures que es passa com a paràmetre
+
+    for (int i = 0; i < MAX_FIG; i++)
+    {
+        figTetrisActual[i].create(i);
+    }
 }
 
 int joc(int nivell)
 {
-    // TODO
+    //
     // Definicions i Inicialitzacions necessàries per utilitzar la llibreria gràfica
     // Ha de ser el mateix codi que teniu a la versió de la primera sessió
 
-    // TODO
+    Game joc;
+    joc.Init();
+
+
     // Definicions dels objectes del fons i resultats
 
+    Fons fons;
+    Resultats resultats;
 
 	// Declaracions de variables. No s'han de modificar
     int tecla = 0; // Valor de la tecla pressionada en cada iteració del joc
@@ -70,20 +98,27 @@ int joc(int nivell)
 	// Inicialtizar variable per control del temps
     now = time(NULL);
 
-    // TODO
+
     // Inicialitzar els gràfics del fons i resultat cridant als mètodes Inicialitzar de les classes fons i resultat
     // per al fons "data/GraficsTetris/fons.png");
     // per el resultat "data/GraficsTetris/Resultats.png"
 
+    fons.inicialitzar("data/GraficsTetris/fons.png");
+    resultats.inicialitzar("data/GraficsTetris/Resultats.png");
 
-   	// TODO
+
+
    	// Mostrem la finestra del joc com a la sesio 1
 
+   	joc.Video_ShowWindow();
 
-    // TODO
+
+
     // Declaració d'un array per guardar totes les figures del tetris.
     // Inicialitza els gràfics de totes les figures de l'array amb la funció CrearFigTetris
 
+    FigTetris figura[MAX_FIG];
+    crearFigTetris(figura);
 
 	do
     {
@@ -91,12 +126,14 @@ int joc(int nivell)
         int indexFig  = aleatori(INI_FIG, FI_FIG);
 
 
-        // TODO
+
         // Inicialitzacio de la posicio de la figura que s'ha generat aleatòriament utilitzant els mètodes setPosX i setPosY de la figura que
         // ocupa la posició indexFig dins de l'array de figures
         // La posició x vindria donada per ( (INICI_X) + ( ( rand() % ( ( (FI_X - INICI_X - (amplada en quadres figura actual * MIDA_Q)) / MIDA_Q ) + 1 ) ) * MIDA_Q ));
         // La posició y per (INICI_Y);
 
+        figura[indexFig].setPosX(( (INICI_X) + ( ( rand() % ( ( (FI_X - INICI_X - (figura[indexFig].amplada() * MIDA_Q)) / MIDA_Q ) + 1 ) ) * MIDA_Q )));
+        figura[indexFig].setPosY(INICI_Y);
 
         // Inicialitzar variables que controlen si s'ha omplert la última línia i la velocitat del joc
         metaAconseguida = false;
@@ -105,36 +142,51 @@ int joc(int nivell)
         now = time(NULL);
 
 
-        // TODO
+
         // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte) i refrescar pantalla (com a la primera sessió)
 
+        fons.pintaFons();
+        resultats.pintaResultats(nivell, punts);
+        joc.VideoUpdate();
 
         do
         {
-           // TODO
+
            // Permetre que es processin els events com a la sesio 1, llegir event i tractar event, igual que es fa a la primera sessió
 
+            joc.ProcessEvents();
+            tecla = llegirEvent();
+            tractarEvent(tecla, figura[indexFig], fons);
 
 
             // Moviment de la figura segons la velocitat del joc
             contVPeca--;
             if(contVPeca == 0)
             {
-                // TODO
+
                 // Moure la figura una posicions cap avall i verificar si hem arribat a la última línia del tauler actualitzant
                 // metaAconseguida a true si és així i les posicions corresponent de la última línia del tauler ams els colors de la figura
                 // Això s'ha de fer cridant al mètode moureFig de la classe FigTetris.
 
+
+                if (figura[indexFig].moureFig(0, 1, fons))
+                    metaAconseguida = true;
+
+
                 contVPeca = velocitatJoc / nivell; // reinicialització comptador de velocitat
             }
 
-            // TODO
+
             // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte)
 
+            fons.pintaFons();
+            resultats.pintaResultats(nivell, punts);
 
-			// TODO
+
+
 			// Actualitza la pantalla com a sesio 1.
 
+			joc.VideoUpdate();
 
             // Mira el temps que ha trigat
             diffT = difftime(time(NULL),  now);
@@ -143,8 +195,10 @@ int joc(int nivell)
             {
                 finalTemps = true;
 
-                // TODO
+
                 // Reinicialitzar el fons a negre (mètode posarNegre de la classe Fons)
+
+                fons.posarNegre();
 
 
                 // Decrementem nº de vides
@@ -154,14 +208,15 @@ int joc(int nivell)
             }
 
 
-            // TODO Mira si ha fet una linia
-            if(/* TODO aqui hem de cridar al mètode guanyar de la classe Fons per saber si hem aconseguit fer una linia*/)
+            // Mira si ha fet una linia
+            if(fons.guanyar())
             {
                 metaAconseguida = true;
 
-                // TODO
+
                 // Reinicialitzar el fons a negre (mètode posarNegre de la classe Fons)
 
+                fons.posarNegre();
 
                 // Incrementem puntuació i nivell
                 punts += 1*nivell;
