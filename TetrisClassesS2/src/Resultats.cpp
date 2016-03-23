@@ -24,6 +24,7 @@ void Resultats::inicialitzar(const char* rutaResultats)
 {
    // TODO
    // Crea el gràfic que s'utilitza per mostrar els resultats a partir de la ruta que es passa com a paràmetre
+   m_resultats.Create(rutaResultats)
 }
 
 void Resultats::pintaResultats(int nivell, int punts)
@@ -38,6 +39,7 @@ void Resultats::escriuDigit(int n, int posX, int posY)
     // TODO
     // Escriu un digit a la posicio x,y que es passa com a paràmetre.
     // Els gràfics de cada dígit estan a l''atribut m_digits que s'inicialitza al constructor
+
 }
 
 //Escriu numeros de fins a 3 xifres donant-li el numero i la posiciox i y de les centenes i la
