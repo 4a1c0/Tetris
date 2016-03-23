@@ -12,14 +12,17 @@ FigTetris::~FigTetris()
 
 void FigTetris::setPosX(int posX)
 {
-    // TODO
+
     // Heu de modificar el valor de l'atribut m_posX (posició x de la figura) amb el valor posX que es passa com a paràmetre
+    m_posX = posX;
+
 }
 
 void FigTetris::setPosY(int posY)
 {
-    // TODO
+
     // Heu de modificar el valor de l'atribut m_posY (posició y de la figura) amb el valor posY que es passa com a paràmetre
+    m_posY = posY;
 
 }
 
@@ -27,6 +30,7 @@ void FigTetris::draw()
 {
     // TODO
     // Heu e dibuixar el gràfic de la figura del tetris a la posicio m_posX, m_posY
+    m_figura.Draw(m_posX, m_posY);
 }
 
 void FigTetris::create(int indexFig)
@@ -42,18 +46,58 @@ void FigTetris::create(int indexFig)
     // S:("data/Graficstetris/sverd1.png")
     // Z:("data/Graficstetris/zroig1.png")
     // Per cada figura, a més a més de crear el gràfic heu d'inicialitzar la resta dels atributs de la classe (amplada, alçada, index i color)
+
+    switch (indexFig)
+case 0:
+    m_figura.Create("data/Graficstetris/q4groc1.png");
+
+
+    break
+case 1:
+    m_figura.Create("data/Graficstetris/ltaronja2.png");
+
+
+    break;
+case 2:
+    m_figura.Create("data/Graficstetris/zroid1.png");
+
+
+    break;
+case 3:
+    m_figura.Create("data/Graficstetris/tmagenta2.png");
+
+
+    break;
+case 4:
+    m_figura.Create("data/Graficstetris/sverd1.png");
+
+
+    break;
+case 5:
+    m_figura.Create("data/Graficstetris/palblaucel1.png");
+
+    break;
+case 6:
+    m_figura.Create("data/Graficstetris/pblaufosc4.png");
+
+    break;
+default:
+    break;
+
 }
 
 int FigTetris::amplada()
 {
     // TODO
     // Retorna l'amplada de la figura
+    return amplada;
 }
 
 int FigTetris::alcada()
 {
     // TODO
     // Retorna l'alçada de la figura
+    return m_alcada;
 }
 
 bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
