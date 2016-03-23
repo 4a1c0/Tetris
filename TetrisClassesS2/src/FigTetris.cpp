@@ -48,41 +48,43 @@ void FigTetris::create(int indexFig)
     // Per cada figura, a més a més de crear el gràfic heu d'inicialitzar la resta dels atributs de la classe (amplada, alçada, index i color)
 
     switch (indexFig)
-case 0:
-    m_figura.Create("data/Graficstetris/q4groc1.png");
+    {
+        case O:
+            m_figura.Create("data/Graficstetris/q4groc1.png");
+
+            break;
+        case 1:
+            m_figura.Create("data/Graficstetris/ltaronja2.png");
 
 
-    break
-case 1:
-    m_figura.Create("data/Graficstetris/ltaronja2.png");
+            break;
+        case 2:
+            m_figura.Create("data/Graficstetris/zroid1.png");
 
 
-    break;
-case 2:
-    m_figura.Create("data/Graficstetris/zroid1.png");
+            break;
+        case 3:
+            m_figura.Create("data/Graficstetris/tmagenta2.png");
 
 
-    break;
-case 3:
-    m_figura.Create("data/Graficstetris/tmagenta2.png");
+            break;
+        case 4:
+            m_figura.Create("data/Graficstetris/sverd1.png");
 
 
-    break;
-case 4:
-    m_figura.Create("data/Graficstetris/sverd1.png");
+            break;
+        case 5:
+            m_figura.Create("data/Graficstetris/palblaucel1.png");
 
+            break;
+        case 6:
+            m_figura.Create("data/Graficstetris/pblaufosc4.png");
 
-    break;
-case 5:
-    m_figura.Create("data/Graficstetris/palblaucel1.png");
+            break;
+        default:
+            break;
 
-    break;
-case 6:
-    m_figura.Create("data/Graficstetris/pblaufosc4.png");
-
-    break;
-default:
-    break;
+    }
 
 }
 
@@ -90,7 +92,7 @@ int FigTetris::amplada()
 {
     // TODO
     // Retorna l'amplada de la figura
-    return amplada;
+    return m_amplada;
 }
 
 int FigTetris::alcada()
