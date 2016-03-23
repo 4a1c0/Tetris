@@ -46,13 +46,18 @@ void crearFigTetris(FigTetris* figTetrisActual)
 
 int joc(int nivell)
 {
-    // TODO
+    //
     // Definicions i Inicialitzacions necessàries per utilitzar la llibreria gràfica
     // Ha de ser el mateix codi que teniu a la versió de la primera sessió
 
-    // TODO
+    Game joc;
+    joc.Init();
+
+
     // Definicions dels objectes del fons i resultats
 
+    Fons fons;
+    Resultats resultats;
 
 	// Declaracions de variables. No s'han de modificar
     int tecla = 0; // Valor de la tecla pressionada en cada iteració del joc
@@ -70,20 +75,27 @@ int joc(int nivell)
 	// Inicialtizar variable per control del temps
     now = time(NULL);
 
-    // TODO
+
     // Inicialitzar els gràfics del fons i resultat cridant als mètodes Inicialitzar de les classes fons i resultat
     // per al fons "data/GraficsTetris/fons.png");
     // per el resultat "data/GraficsTetris/Resultats.png"
 
+    fons.inicialitzar("data/GraficsTetris/fons.png");
+    resultats.inicialitzar("data/GraficsTetris/Resultats.png");
 
-   	// TODO
+
+
    	// Mostrem la finestra del joc com a la sesio 1
 
+   	joc.Video_ShowWindow();
 
-    // TODO
+
+
     // Declaració d'un array per guardar totes les figures del tetris.
     // Inicialitza els gràfics de totes les figures de l'array amb la funció CrearFigTetris
 
+    FigTetris fitxes[MAX_FIG];
+    crearFigTetris(fitxes);
 
 	do
     {
@@ -91,12 +103,14 @@ int joc(int nivell)
         int indexFig  = aleatori(INI_FIG, FI_FIG);
 
 
-        // TODO
+
         // Inicialitzacio de la posicio de la figura que s'ha generat aleatòriament utilitzant els mètodes setPosX i setPosY de la figura que
         // ocupa la posició indexFig dins de l'array de figures
         // La posició x vindria donada per ( (INICI_X) + ( ( rand() % ( ( (FI_X - INICI_X - (amplada en quadres figura actual * MIDA_Q)) / MIDA_Q ) + 1 ) ) * MIDA_Q ));
         // La posició y per (INICI_Y);
 
+        fitxes[indexFig].setPosX(( (INICI_X) + ( ( rand() % ( ( (FI_X - INICI_X - (fitxes[indexFig].amplada() * MIDA_Q)) / MIDA_Q ) + 1 ) ) * MIDA_Q )));
+        fitxes[indexFig].setPosY(INICI_Y);
 
         // Inicialitzar variables que controlen si s'ha omplert la última línia i la velocitat del joc
         metaAconseguida = false;
@@ -105,9 +119,12 @@ int joc(int nivell)
         now = time(NULL);
 
 
-        // TODO
+
         // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte) i refrescar pantalla (com a la primera sessió)
 
+        fons.pintaFons();
+        resultats.pintaResultats(nivell, punts);
+        joc.VideoUpdate();
 
         do
         {
