@@ -20,26 +20,52 @@ Fons::~Fons()
 
 void Fons::inicialitzar(const char *rutaFons)
 {
-    // TODO
+
     // Heu de crear l'Sprite amb el dibuix del fons del tauler
     // També heu d'inicialitzar totes les posicions de la matriu m_tauler  a color negre, excepte la primera i ultima columna
     // i la última fila que s'han d'inicialitzar a gris. D'aquesta manera marquem que tot el tauler està buit. Per fer-ho podeu utilitzar
     // els mètodes posarNegre() i posarGris()
 
+    Sprite m_fons(rutaFons);
+    posarNegre();
+    posarGris();
+
 
 }
 void Fons::posarNegre()
 {
-    // TODO
+
     // Heu d'inicialitzar totes les posicions interiors (que no són límits) de la matriu m_tauler a negre
+
+    for (int j = 0; j < MAX_FILA - 1; j++)
+    {
+        for (int i = 1; i < MAX_COL -1; i++)
+        {
+            m_tauler[j][i] = COLOR_NEGRE;
+        }
+    }
 
 }
 
 void Fons::posarGris()
 {
-    // TODO
+
     // Heu d'inicialitzar primera i ultima columnes de la matriu m_tauler a gris
     // Heu d'inicialitzar la última fila de la matriu m_tauler a gris
+
+    for (int i = 0; i < MAX_COL; i++)
+    {
+        m_tauler[MAX_FILA][i] = COLOR_GRIS;
+    }
+
+
+    for (int j = 0; j < MAX_FILA; j++)
+    {
+        m_tauler[j][0] = COLOR_GRIS;
+        m_tauler[j][MAX_COL] = COLOR_GRIS;
+    }
+
+
 
 }
 
