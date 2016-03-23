@@ -35,7 +35,7 @@ void FigTetris::draw()
 
 void FigTetris::create(int indexFig)
 {
-    // TODO
+
     // Heu de crear una de les figures del tetris en funció de l'índex que es passa com a paràmetre
     // A continuació teniu el gràfic que heu d'utilitzar per cada possible valor de indexFig
     // I: ("data/Graficstetris/palblaucel1.png")
@@ -51,35 +51,52 @@ void FigTetris::create(int indexFig)
     {
         case O:
             m_figura.Create("data/Graficstetris/q4groc1.png");
-
+            m_amplada = 2;
+            m_alcada = 2;
+            m_indexFig = indexFig;
+            m_color = COLOR_GROC;
             break;
-        case 1:
+        case L:
             m_figura.Create("data/Graficstetris/ltaronja2.png");
-
-
+            m_amplada = 3;
+            m_alcada = 2;
+            m_indexFig = indexFig;
+            m_color = COLOR_TARONJA;
             break;
-        case 2:
+        case Z:
             m_figura.Create("data/Graficstetris/zroid1.png");
-
-
+            m_amplada = 3;
+            m_alcada = 2;
+            m_indexFig = indexFig;
+            m_color = COLOR_ROIG;
             break;
-        case 3:
+        case T:
             m_figura.Create("data/Graficstetris/tmagenta2.png");
-
-
+            m_amplada = 3;
+            m_alcada = 2;
+            m_indexFig = indexFig;
+            m_color = COLOR_MAGENTA;
             break;
-        case 4:
+        case S:
             m_figura.Create("data/Graficstetris/sverd1.png");
-
-
+            m_amplada = 3;
+            m_alcada = 2;
+            m_indexFig = indexFig;
+            m_color = COLOR_VERD;
             break;
-        case 5:
+        case I:
             m_figura.Create("data/Graficstetris/palblaucel1.png");
-
+            m_amplada = 1;
+            m_alcada = 4;
+            m_indexFig = indexFig;
+            m_color = COLOR_BLAUCEL;
             break;
-        case 6:
+        case P:
             m_figura.Create("data/Graficstetris/pblaufosc4.png");
-
+            m_amplada = 3;
+            m_alcada = 2;
+            m_indexFig = indexFig;
+            m_color = COLOR_BLAUFOSC;
             break;
         default:
             break;
@@ -90,14 +107,14 @@ void FigTetris::create(int indexFig)
 
 int FigTetris::amplada()
 {
-    // TODO
+
     // Retorna l'amplada de la figura
     return m_amplada;
 }
 
 int FigTetris::alcada()
 {
-    // TODO
+
     // Retorna l'alçada de la figura
     return m_alcada;
 }
@@ -117,6 +134,26 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
     // 0, 2: moviment a baix de dues posicions. Aqui a més hem de veure si ja hem arribat a baix de tot. Si hem arribat retornarem true,
     //       i actualitzarem la última línia del tauler del fons amb els quadres del color de la figura actual.
 
+    bool arribada = false;
+
+    if ((dirX == -1) && (m_posX > (INICI_X/MIDA_Q))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
+        m_posX --;
+
+    if ((dirX == 1) && ((m_posX + m_amplada) < (FI_X/MIDA_Q))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
+        m_posX ++;
+
+    if ((dirY == 1) && (m_posY < (FI_Y/MIDA_Q))) //ABAIX Normal (1 pos): mirem els límits
+        m_posY ++;
+
+    if ((dirY == 2) && ((m_posY + 1) < (FI_Y/MIDA_Q))) //ABAIX Tecla (2 pos): mirem limits
+        m_pos += 2;
+
+    if (m_posY == (FI_Y/MIDA_Q)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
+    {
+        figuraEncaixada(fons);
+        arribada = true;
+    }
+    return arribada;
 }
 
 void FigTetris::figuraEncaixada(Fons& fons)
@@ -124,4 +161,6 @@ void FigTetris::figuraEncaixada(Fons& fons)
 	// TODO:
 	// Aquest mètode s'ha de cridar quan la figura arriba a baix de tot.
 	// Modifica els quadres corresponents a l'amplada de la figura actual a les posicions de la última línia del tauler el fons amb els colors de la figura actual
+
+
 }

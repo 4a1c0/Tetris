@@ -7342,3 +7342,34 @@
 1457652001 \\vboxsvr\github\tetris\tetrisclassess2\include\figtetris.h
 	"Fons.h"
 
+1458753805 source:\\vboxsvr\github\tetris\tetrisclassess2\src\joc.cpp
+	"Joc.h"
+	"../lib/libreria.h"
+	<cstdlib>
+	"Resultats.h"
+
+1457652001 \\vboxsvr\github\tetris\tetrisclassess2\include\joc.h
+	<conio.h>
+	<stdio.h>
+	<time.h>
+	"FigTetris.h"
+
+1457652001 \\vboxsvr\github\tetris\tetrisclassess2\include\resultats.h
+	"../lib/libreria.h"
+
+1457652001 source:\\vboxsvr\github\tetris\tetrisclassess2\src\menu.cpp
+	"Menu.h"
+
+1457652001 \\vboxsvr\github\tetris\tetrisclassess2\include\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1457652001 source:\\vboxsvr\github\tetris\tetrisclassess2\src\principal.cpp
+	"Menu.h"
+	"Joc.h"
+	"GestioResultats.h"
+	<conio.h>
+
+1457652001 source:\\vboxsvr\github\tetris\tetrisclassess2\src\resultats.cpp
+	"Resultats.h"
+
