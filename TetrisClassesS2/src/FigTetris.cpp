@@ -12,14 +12,17 @@ FigTetris::~FigTetris()
 
 void FigTetris::setPosX(int posX)
 {
-    // TODO
+
     // Heu de modificar el valor de l'atribut m_posX (posició x de la figura) amb el valor posX que es passa com a paràmetre
+    m_posX = posX;
+
 }
 
 void FigTetris::setPosY(int posY)
 {
-    // TODO
+
     // Heu de modificar el valor de l'atribut m_posY (posició y de la figura) amb el valor posY que es passa com a paràmetre
+    m_posY = posY;
 
 }
 
