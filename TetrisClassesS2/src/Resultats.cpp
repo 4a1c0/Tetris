@@ -2,7 +2,7 @@
 
 Resultats::Resultats()
 {
-    // Constructor. Crea tots els gr‡fics per mostrar el dÌgits. No s'ha de modificar
+    // Constructor. Crea tots els gr√†fics per mostrar el d√≠gits. No s'ha de modificar
     m_digits[0].Create("data/numeros/numero0000.png");
     m_digits[1].Create("data/numeros/numero0001.png");
     m_digits[2].Create("data/numeros/numero0002.png");
@@ -23,22 +23,24 @@ Resultats::~Resultats()
 void Resultats::inicialitzar(const char* rutaResultats)
 {
    // TODO
-   // Crea el gr‡fic que s'utilitza per mostrar els resultats a partir de la ruta que es passa com a par‡metre
+   // Crea el gr√†fic que s'utilitza per mostrar els resultats a partir de la ruta que es passa com a par√†metre
    m_resultats.Create(rutaResultats)
 }
 
 void Resultats::pintaResultats(int nivell, int punts)
 {
     // TODO
-    // Pinta el grafic de fons dels resultats i mostra el nivell i els punts (que es passen com a par‡metres)
-    // utilitzant el mËtode escriuNumero
+    // Pinta el grafic de fons dels resultats i mostra el nivell i els punts (que es passen com a par√†metres)
+    // utilitzant el m√®tode escriuNumero
+    m_resultats.nivell = escriuNumero(n, posX, posY, pasDigit);
+    m_resultats.punts = escriuNumero(n, posX, posY, pasDigit);
 }
 
 void Resultats::escriuDigit(int n, int posX, int posY)
 {
     // TODO
-    // Escriu un digit a la posicio x,y que es passa com a par‡metre.
-    // Els gr‡fics de cada dÌgit estan a l''atribut m_digits que s'inicialitza al constructor
+    // Escriu un digit a la posicio x,y que es passa com a par√†metre.
+    // Els gr√†fics de cada d√≠git estan a l''atribut m_digits que s'inicialitza al constructor
 
 }
 
