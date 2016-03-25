@@ -41,6 +41,7 @@ void Resultats::escriuDigit(int n, int posX, int posY)
     // TODO
     // Escriu un digit a la posicio x,y que es passa com a paràmetre.
     // Els gràfics de cada dígit estan a l''atribut m_digits que s'inicialitza al constructor
+    
 
 }
 
