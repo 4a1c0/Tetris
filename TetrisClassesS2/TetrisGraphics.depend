@@ -7847,7 +7847,7 @@
 1459208971 c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\include\fons.h
 	"../lib/libreria.h"
 
-1459235720 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\fons.cpp
+1459236037 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\fons.cpp
 	"Fons.h"
 
 1459208971 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\gestioresultats.cpp
@@ -7858,7 +7858,7 @@
 
 1459208971 c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\include\gestioresultats.h
 
-1459208971 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\joc.cpp
+1459236037 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\joc.cpp
 	"Joc.h"
 	"../lib/libreria.h"
 	<cstdlib>
@@ -7886,6 +7886,6 @@
 	"GestioResultats.h"
 	<conio.h>
 
-1459211019 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\resultats.cpp
+1459236037 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\resultats.cpp
 	"Resultats.h"
 
