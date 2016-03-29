@@ -24,7 +24,7 @@ void Resultats::inicialitzar(const char* rutaResultats)
 {
    // TODO
    // Crea el gràfic que s'utilitza per mostrar els resultats a partir de la ruta que es passa com a paràmetre
-   m_resultats.Create(rutaResultats)
+   m_resultats.Create(rutaResultats);
 }
 
 void Resultats::pintaResultats(int nivell, int punts)
@@ -32,8 +32,8 @@ void Resultats::pintaResultats(int nivell, int punts)
     // TODO
     // Pinta el grafic de fons dels resultats i mostra el nivell i els punts (que es passen com a paràmetres)
     // utilitzant el mètode escriuNumero
-    m_resultats.nivell = escriuNumero(n, posX, posY, pasDigit);
-    m_resultats.punts = escriuNumero(n, posX, posY, pasDigit);
+    //m_resultats.nivell = escriuNumero(n, posX, posY, pasDigit);
+    //m_resultats.punts = escriuNumero(n, posX, posY, pasDigit);
 }
 
 void Resultats::escriuDigit(int n, int posX, int posY)
@@ -41,7 +41,7 @@ void Resultats::escriuDigit(int n, int posX, int posY)
     // TODO
     // Escriu un digit a la posicio x,y que es passa com a paràmetre.
     // Els gràfics de cada dígit estan a l''atribut m_digits que s'inicialitza al constructor
-    
+
 
 }
 
