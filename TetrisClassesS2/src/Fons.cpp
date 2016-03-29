@@ -73,7 +73,7 @@ void Fons::posarGris()
 
 void Fons::pintaFons()
 {
-    // TODO:
+
     // Heu de pintar tots els quadres del fons del tauler que que no són negres i que per tant corresponen a figures que ja s'han col·locat al tauler.
     // De moment, tots els quadres de color (no negres) estaran a l'úlitima línia del tauler
     // Recoreu que els quares grisos del tauler ja estan pintats a la imatge del fons i no els heu de tornar a dibuixar.
@@ -86,7 +86,7 @@ void Fons::pintaFons()
         {
             if (m_tauler[j][i] != COLOR_NEGRE)
             {
-                m_quadrats[m_tauler[j][i]].Draw((i)*MIDA_Q, (j)*MIDA_Q);
+                m_quadrats[m_tauler[j][i]].Draw(i*MIDA_Q, j*MIDA_Q);
             }
         }
 
@@ -94,7 +94,7 @@ void Fons::pintaFons()
 
 void Fons::setTauler(int fila, int columna, int color)
 {
-    // TODO
+
     // Heu de modificar el valor de color de la posició fila, columna del tauler (valor de la matriu m_tauler) amb el color que es passa com a paràmetre.
 
     m_tauler[columna][fila] = color;
@@ -104,7 +104,7 @@ void Fons::setTauler(int fila, int columna, int color)
 
 bool Fons::guanyar()
 {
-	// TODO
+
 	// Heu de retornar cert si la última línia del tauler que no està gris està tota pintada de colors
 	// i fals si hi ha algun quadre a negre.
 

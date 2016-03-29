@@ -148,7 +148,7 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
     if ((dirY == 2) && ((m_posY + m_alcada * MIDA_Q + MIDA_Q) < FI_Y)) //ABAIX Tecla (2 pos): mirem limits
         m_posY += 2 * MIDA_Q;
 
-    if ((m_posY + m_alcada * MIDA_Q) >= (FI_Y)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
+    if ((m_posY + m_alcada * MIDA_Q) > (FI_Y - MIDA_Q)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
     {
         figuraEncaixada(fons);
         arribada = true;
@@ -164,7 +164,7 @@ void FigTetris::figuraEncaixada(Fons& fons)
 
     for (int i = 0; i < m_amplada; i ++)
     {
-        fons.setTauler(i + m_posX/MIDA_Q, MAX_FILA - 2, m_color);
+        fons.setTauler(i + (m_posX/MIDA_Q), MAX_FILA - 2, m_color);
     }
 
 }
