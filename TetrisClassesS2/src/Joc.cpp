@@ -89,7 +89,7 @@ int joc(int nivell)
     int tecla = 0; // Valor de la tecla pressionada en cada iteració del joc
     bool metaAconseguida; // Indica si la figura ha arribat a la última línia del taules
     bool finalTemps; // Indica si se'ns ha acabat el temps per completar la última línia del tauler
-	int velocitatJoc = 80; // Indica velocitat del joc, quantes més linies es fan més ràpida és
+	int velocitatJoc = 1000; // Indica velocitat del joc, quantes més linies es fan més ràpida és
 	int contVPeca; // Comptador per controlar la velocitat
 	int vides = 3; // Nº de vides
 	int punts = 0; // Punts
@@ -165,6 +165,7 @@ int joc(int nivell)
 
             // Moviment de la figura segons la velocitat del joc
             contVPeca--;
+
             if(contVPeca == 0)
             {
 

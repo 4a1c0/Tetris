@@ -41,7 +41,7 @@ void Fons::posarNegre()
 
     for (int j = 0; j < MAX_FILA - 1; j++)
     {
-        for (int i = 1; i < MAX_COL -1; i++)
+        for (int i = 1; i < MAX_COL - 1; i++)
         {
             m_tauler[j][i] = COLOR_NEGRE;
         }
@@ -86,7 +86,7 @@ void Fons::pintaFons()
         {
             if (m_tauler[j][i] != COLOR_NEGRE)
             {
-                m_quadrats[m_tauler[j][i]].Draw(i*MIDA_Q, (j + 1)*MIDA_Q);
+                m_quadrats[m_tauler[j][i]].Draw((i)*MIDA_Q, (j)*MIDA_Q);
             }
         }
 
@@ -97,7 +97,7 @@ void Fons::setTauler(int fila, int columna, int color)
     // TODO
     // Heu de modificar el valor de color de la posició fila, columna del tauler (valor de la matriu m_tauler) amb el color que es passa com a paràmetre.
 
-    m_tauler[fila][columna] = color;
+    m_tauler[columna][fila] = color;
 
 }
 
@@ -109,13 +109,14 @@ bool Fons::guanyar()
 	// i fals si hi ha algun quadre a negre.
 
 
-	bool complet = false;
-    int i = 1;
+	bool complet = true;
+
 	int j = MAX_FILA - 2; // degut a que de moment nomes fem servir la ultima fila
-	while(m_tauler[j][i] != COLOR_NEGRE && i < MAX_COL)
+    for(int i = 1; i < MAX_COL - 1; i++)
     {
-        complet = true;
-        i++;
+        if (m_tauler[j][i] == COLOR_NEGRE)
+            complet = false;
     }
+
     return complet;
 }

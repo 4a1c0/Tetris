@@ -136,19 +136,19 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 
     bool arribada = false;
 
-    if ((dirX == -1) && ((m_posX * MIDA_Q) > (INICI_X))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
+    if ((dirX == -1) && ((m_posX) > (INICI_X))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
         m_posX -= MIDA_Q;
 
-    if ((dirX == 1) && (((m_posX * MIDA_Q) + m_amplada) < (FI_X))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
+    if ((dirX == 1) && (((m_posX) + (m_amplada * MIDA_Q)) < (FI_X))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
         m_posX += MIDA_Q;
 
-    if ((dirY == 1) && ((m_posY * MIDA_Q) < (FI_Y))) //ABAIX Normal (1 pos): mirem els límits
+    if ((dirY == 1) && ((m_posY + m_alcada * MIDA_Q) < FI_Y)) //ABAIX Normal (1 pos): mirem els límits
         m_posY += MIDA_Q;
 
-    if ((dirY == 2) && (((m_posY * MIDA_Q) + MIDA_Q) < (FI_Y))) //ABAIX Tecla (2 pos): mirem limits
+    if ((dirY == 2) && ((m_posY + m_alcada * MIDA_Q + MIDA_Q) < FI_Y)) //ABAIX Tecla (2 pos): mirem limits
         m_posY += 2 * MIDA_Q;
 
-    if (m_posY == (FI_Y)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
+    if ((m_posY + m_alcada * MIDA_Q) >= (FI_Y)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
     {
         figuraEncaixada(fons);
         arribada = true;
@@ -162,11 +162,9 @@ void FigTetris::figuraEncaixada(Fons& fons)
 	// Aquest mètode s'ha de cridar quan la figura arriba a baix de tot.
 	// Modifica els quadres corresponents a l'amplada de la figura actual a les posicions de la última línia del tauler el fons amb els colors de la figura actual
 
-    for (int i = m_posX; i <= (m_posX + m_amplada); i++)
+    for (int i = 0; i < m_amplada; i ++)
     {
-        fons.setTauler(i, m_posY, m_color);
-
+        fons.setTauler(i + m_posX/MIDA_Q, MAX_FILA - 2, m_color);
     }
-
 
 }
