@@ -162,5 +162,11 @@ void FigTetris::figuraEncaixada(Fons& fons)
 	// Aquest mètode s'ha de cridar quan la figura arriba a baix de tot.
 	// Modifica els quadres corresponents a l'amplada de la figura actual a les posicions de la última línia del tauler el fons amb els colors de la figura actual
 
+    for (int i = m_posX; i <= (m_posX + m_amplada); i++)
+    {
+        fons.setTauler(i, m_posY, m_color);
+
+    }
+
 
 }
