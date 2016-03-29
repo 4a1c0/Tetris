@@ -7838,7 +7838,7 @@
 	<iostream>
 	<windows.h>
 
-1459236175 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\figtetris.cpp
+1459252639 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\figtetris.cpp
 	"FigTetris.h"
 
 1459208971 c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\include\figtetris.h
@@ -7847,7 +7847,7 @@
 1459208971 c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\include\fons.h
 	"../lib/libreria.h"
 
-1459236037 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\fons.cpp
+1459251607 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\fons.cpp
 	"Fons.h"
 
 1459208971 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\gestioresultats.cpp
@@ -7858,10 +7858,11 @@
 
 1459208971 c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\include\gestioresultats.h
 
-1459236037 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\joc.cpp
+1459252394 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\joc.cpp
 	"Joc.h"
 	"../lib/libreria.h"
 	<cstdlib>
+	<iostream>
 	"Resultats.h"
 
 1459208971 c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\include\joc.h
@@ -7880,7 +7881,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1459208971 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\principal.cpp
+1459249462 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\principal.cpp
 	"Menu.h"
 	"Joc.h"
 	"GestioResultats.h"

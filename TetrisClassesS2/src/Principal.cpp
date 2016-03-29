@@ -17,7 +17,6 @@ int main()
 
     char opcio;
     char nivell = '1';
-fons.setTauler(m_posX, m_posY, m_color);
 	do{
 		menuPrincipal();
 		opcio = _getch();

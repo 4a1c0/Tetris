@@ -2,9 +2,11 @@
 #include "Joc.h"
 #include "../lib/libreria.h"
 #include <cstdlib>
+#include <iostream>
 
 #include "Resultats.h"
 
+using namespace std;
 
 int llegirEvent()
 {
@@ -77,6 +79,7 @@ int joc(int nivell)
     joc.Init();
 
 
+
     // Definicions dels objectes del fons i resultats
 
     Fons fons;
@@ -142,11 +145,12 @@ int joc(int nivell)
         now = time(NULL);
 
 
-
         // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte) i refrescar pantalla (com a la primera sessió)
 
         fons.pintaFons();
         resultats.pintaResultats(nivell, punts);
+        figura[indexFig].draw();
+
         joc.VideoUpdate();
 
         do
@@ -169,8 +173,8 @@ int joc(int nivell)
                 // Això s'ha de fer cridant al mètode moureFig de la classe FigTetris.
 
 
-                if (figura[indexFig].moureFig(0, 1, fons))
-                    metaAconseguida = true;
+                metaAconseguida = figura[indexFig].moureFig(0, 1, fons);
+
 
 
                 contVPeca = velocitatJoc / nivell; // reinicialització comptador de velocitat

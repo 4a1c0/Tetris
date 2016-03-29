@@ -1,5 +1,7 @@
 #include "Fons.h"
 
+
+
 Fons::Fons()
 {
     // Constructor. No s'ha de modificar.
@@ -26,7 +28,7 @@ void Fons::inicialitzar(const char *rutaFons)
     // i la última fila que s'han d'inicialitzar a gris. D'aquesta manera marquem que tot el tauler està buit. Per fer-ho podeu utilitzar
     // els mètodes posarNegre() i posarGris()
 
-    Sprite m_fons(rutaFons);
+    m_fons.Create(rutaFons);
     posarNegre();
     posarGris();
 
@@ -76,14 +78,17 @@ void Fons::pintaFons()
     // De moment, tots els quadres de color (no negres) estaran a l'úlitima línia del tauler
     // Recoreu que els quares grisos del tauler ja estan pintats a la imatge del fons i no els heu de tornar a dibuixar.
 
-        int j = MAX_FILA - 1; // degut a que de moment nom�s fem servir la �ltima fila
-    for(int i = 1; i < MAX_COL - 1; i++)
-    {
-        if (m_tauler[j][i] != COLOR_NEGRE)
+        int j = MAX_FILA - 2; // degut a que de moment nomes fem servir la ultima fila
+
+        m_fons.Draw(0,0);
+
+        for(int i = 1; i < MAX_COL - 1; i++)
         {
-            m_quadrats[m_tauler[j][i]].Draw(i*MIDA_Q, j*MIDA_Q);
+            if (m_tauler[j][i] != COLOR_NEGRE)
+            {
+                m_quadrats[m_tauler[j][i]].Draw(i*MIDA_Q, (j + 1)*MIDA_Q);
+            }
         }
-    }
 
 }
 
@@ -105,8 +110,8 @@ bool Fons::guanyar()
 
 
 	bool complet = false;
-    int i = 0;
-	int j = MAX_FILA - 1; // degut a que de moment nomes fem servir la ultima fila
+    int i = 1;
+	int j = MAX_FILA - 2; // degut a que de moment nomes fem servir la ultima fila
 	while(m_tauler[j][i] != COLOR_NEGRE && i < MAX_COL)
     {
         complet = true;
