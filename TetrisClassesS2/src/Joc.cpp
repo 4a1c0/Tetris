@@ -181,6 +181,7 @@ int joc(int nivell)
 
             fons.pintaFons();
             resultats.pintaResultats(nivell, punts);
+            figura[indexFig].draw();
 
 
 
