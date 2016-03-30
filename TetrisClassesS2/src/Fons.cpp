@@ -43,7 +43,7 @@ void Fons::posarNegre()
     {
         for (int i = 1; i < MAX_COL - 1; i++)
         {
-            m_tauler[j][i] = COLOR_NEGRE;
+            m_tauler[i][j] = COLOR_NEGRE;
         }
     }
 
@@ -57,14 +57,14 @@ void Fons::posarGris()
 
     for (int i = 0; i < MAX_COL; i++)
     {
-        m_tauler[MAX_FILA][i] = COLOR_GRIS;
+        m_tauler[i][MAX_FILA] = COLOR_GRIS;
     }
 
 
     for (int j = 0; j < MAX_FILA; j++)
     {
-        m_tauler[j][0] = COLOR_GRIS;
-        m_tauler[j][MAX_COL] = COLOR_GRIS;
+        m_tauler[0][j] = COLOR_GRIS;
+        m_tauler[MAX_COL][j] = COLOR_GRIS;
     }
 
 
@@ -84,9 +84,9 @@ void Fons::pintaFons()
 
         for(int i = 1; i < MAX_COL - 1; i++)
         {
-            if (m_tauler[j][i] != COLOR_NEGRE)
+            if (m_tauler[i][j] != COLOR_NEGRE)
             {
-                m_quadrats[m_tauler[j][i]].Draw(i*MIDA_Q, j*MIDA_Q);
+                m_quadrats[m_tauler[i][j]].Draw(i*MIDA_Q, j*MIDA_Q);
             }
         }
 
@@ -97,7 +97,8 @@ void Fons::setTauler(int fila, int columna, int color)
 
     // Heu de modificar el valor de color de la posició fila, columna del tauler (valor de la matriu m_tauler) amb el color que es passa com a paràmetre.
 
-    m_tauler[columna][fila] = color;
+    m_tauler[fila][columna] = color;
+
 
 }
 
@@ -114,7 +115,7 @@ bool Fons::guanyar()
 	int j = MAX_FILA - 2; // degut a que de moment nomes fem servir la ultima fila
     for(int i = 1; i < MAX_COL - 1; i++)
     {
-        if (m_tauler[j][i] == COLOR_NEGRE)
+        if (m_tauler[i][j] == COLOR_NEGRE)
             complet = false;
     }
 
