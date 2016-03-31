@@ -55,6 +55,7 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_GROC;
+
             break;
         case L:
             m_figura.Create("data/Graficstetris/ltaronja2.png");
