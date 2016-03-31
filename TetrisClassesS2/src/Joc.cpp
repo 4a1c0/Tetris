@@ -88,7 +88,7 @@ int joc(int nivell)
     int tecla = 0; // Valor de la tecla pressionada en cada iteració del joc
     bool metaAconseguida; // Indica si la figura ha arribat a la última línia del taules
     bool finalTemps; // Indica si se'ns ha acabat el temps per completar la última línia del tauler
-	int velocitatJoc = 1000; // Indica velocitat del joc, quantes més linies es fan més ràpida és
+	int velocitatJoc = 400; // Indica velocitat del joc, quantes més linies es fan més ràpida és
 	int contVPeca; // Comptador per controlar la velocitat
 	int vides = 3; // Nº de vides
 	int punts = 0; // Punts
@@ -147,7 +147,7 @@ int joc(int nivell)
         // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte) i refrescar pantalla (com a la primera sessió)
 
         fons.pintaFons();
-        resultats.pintaResultats(nivell, punts);
+        resultats.pintaResultats(nivell, punts, vides);
         figura[indexFig].draw();
 
         joc.VideoUpdate();
@@ -184,7 +184,7 @@ int joc(int nivell)
             // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte)
 
             fons.pintaFons();
-            resultats.pintaResultats(nivell, punts);
+            resultats.pintaResultats(nivell, punts, vides);
             figura[indexFig].draw();
 
 
