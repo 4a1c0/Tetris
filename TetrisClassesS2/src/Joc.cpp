@@ -2,11 +2,10 @@
 #include "Joc.h"
 #include "../lib/libreria.h"
 #include <cstdlib>
-#include <iostream>
+
 
 #include "Resultats.h"
 
-using namespace std;
 
 int llegirEvent()
 {
@@ -59,7 +58,7 @@ void tractarEvent(int tecla, FigTetris& fig, Fons& fons)
 
 void crearFigTetris(FigTetris* figTetrisActual)
 {
-    // TODO
+
     // Heu de crear totes les figures del tetris utilitzant el mètode create de la classe FigTetris i guardar cadascuna de les figures
     // en una de les posicions de l'array de figures que es passa com a paràmetre
 
@@ -71,7 +70,7 @@ void crearFigTetris(FigTetris* figTetrisActual)
 
 int joc(int nivell)
 {
-    //
+
     // Definicions i Inicialitzacions necessàries per utilitzar la llibreria gràfica
     // Ha de ser el mateix codi que teniu a la versió de la primera sessió
 

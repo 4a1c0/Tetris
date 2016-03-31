@@ -28,7 +28,7 @@ void FigTetris::setPosY(int posY)
 
 void FigTetris::draw()
 {
-    // TODO
+
     // Heu e dibuixar el gràfic de la figura del tetris a la posicio m_posX, m_posY
     m_figura.Draw(m_posX, m_posY);
 }
@@ -121,7 +121,7 @@ int FigTetris::alcada()
 
 bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 {
-    // TODO:
+
     // Heu d'analitzar si es pot fer el moviment indicat a dirX i dirY en funció de l'estat del fons i de la posició actual de la figura.
     // Si el moviment és possible, haure de modificar com correspongui el valor dels atributs m_posX i m_posY per actualitzar la posició
     // de la figura d'acord al moviment indicat. La funció ha de retornar true si la figura ha arribat a l'última línia del tauler
@@ -158,7 +158,7 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 
 void FigTetris::figuraEncaixada(Fons& fons)
 {
-	// TODO:
+
 	// Aquest mètode s'ha de cridar quan la figura arriba a baix de tot.
 	// Modifica els quadres corresponents a l'amplada de la figura actual a les posicions de la última línia del tauler el fons amb els colors de la figura actual
 
