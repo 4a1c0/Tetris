@@ -20,8 +20,8 @@ const int FI_Y = 547;
 
 //========================================================================
 // Mida Tauler en files i columnes
-const int MAX_FILA = 22;
-const int MAX_COL = 13;
+const int MAX_FILA = 24;
+const int MAX_COL = 17;
 
 //========================================================================
 // Colors dels cuadrats

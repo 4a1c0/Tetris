@@ -47,6 +47,16 @@ void FigTetris::create(int indexFig)
     // Z:("data/Graficstetris/zroig1.png")
     // Per cada figura, a més a més de crear el gràfic heu d'inicialitzar la resta dels atributs de la classe (amplada, alçada, index i color)
 
+    //Inicialitzar la mascara a false
+
+    for(int i = 0; i < MAX_MASCARA; i++)
+    {
+        for(int j = 0; j<MAX_MASCARA; j++)
+        {
+            m_mascara[i][j] = false;
+        }
+    }
+
     switch (indexFig)
     {
         case O:
@@ -55,6 +65,10 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_GROC;
+            m_mascara[0][0]=true;
+            m_mascara[0][1]=true;
+            m_mascara[1][0]=true;
+            m_mascara[1][1]=true;
 
             break;
         case L:
@@ -63,6 +77,12 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_TARONJA;
+
+            m_mascara[0][2]=true;
+            m_mascara[1][0]=true;
+            m_mascara[1][1]=true;
+            m_mascara[1][2]=true;
+
             break;
         case Z:
             m_figura.Create("data/Graficstetris/zroig1.png");
@@ -70,6 +90,11 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_ROIG;
+            m_mascara[0][0]=true;
+            m_mascara[0][1]=true;
+            m_mascara[1][1]=true;
+            m_mascara[1][2]=true;
+
             break;
         case T:
             m_figura.Create("data/Graficstetris/tmagenta2.png");
@@ -77,6 +102,10 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_MAGENTA;
+            m_mascara[0][1]=true;
+            m_mascara[1][0]=true;
+            m_mascara[1][1]=true;
+            m_mascara[1][2]=true;
             break;
         case S:
             m_figura.Create("data/Graficstetris/sverd1.png");
@@ -84,6 +113,10 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_VERD;
+            m_mascara[0][1]=true;
+            m_mascara[0][2]=true;
+            m_mascara[1][0]=true;
+            m_mascara[1][1]=true;
             break;
         case I:
             m_figura.Create("data/Graficstetris/palblaucel1.png");
@@ -91,6 +124,10 @@ void FigTetris::create(int indexFig)
             m_alcada = 4;
             m_indexFig = indexFig;
             m_color = COLOR_BLAUCEL;
+            m_mascara[0][0]=true;
+            m_mascara[0][1]=true;
+            m_mascara[0][2]=true;
+            m_mascara[0][3]=true;
             break;
         case P:
             m_figura.Create("data/Graficstetris/pblaufosc4.png");
@@ -98,6 +135,10 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_BLAUFOSC;
+            m_mascara[0][0]=true;
+            m_mascara[1][0]=true;
+            m_mascara[1][1]=true;
+            m_mascara[1][2]=true;
             break;
         default:
             break;
@@ -136,6 +177,8 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
     //       i actualitzarem la última línia del tauler del fons amb els quadres del color de la figura actual.
 
     bool arribada = false;
+
+
 
     if ((dirX == -1) && ((m_posX) > (INICI_X))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
         m_posX -= MIDA_Q;
