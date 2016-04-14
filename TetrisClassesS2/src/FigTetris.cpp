@@ -180,16 +180,16 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 
 
 
-    if ((dirX == -1) && ((m_posX) > (INICI_X))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
+    if ((dirX == -1) && (solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
         m_posX -= MIDA_Q;
 
-    if ((dirX == 1) && (((m_posX) + (m_amplada * MIDA_Q)) < (FI_X))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
+    if ((dirX == 1) && ((solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY)))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
         m_posX += MIDA_Q;
 
-    if ((dirY == 1) && ((m_posY + m_alcada * MIDA_Q) < FI_Y)) //ABAIX Normal (1 pos): mirem els límits
+    if ((dirY == 1) && (solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY))) //ABAIX Normal (1 pos): mirem els límits
         m_posY += MIDA_Q;
 
-    if ((dirY == 2) && ((m_posY + m_alcada * MIDA_Q + MIDA_Q) < FI_Y)) //ABAIX Tecla (2 pos): mirem limits
+    if ((dirY == 2) && (solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY))) //ABAIX Tecla (2 pos): mirem limits
         m_posY += 2 * MIDA_Q;
 
     if ((m_posY + m_alcada * MIDA_Q) > (FI_Y - MIDA_Q)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
