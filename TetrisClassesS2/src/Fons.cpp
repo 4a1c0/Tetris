@@ -114,6 +114,25 @@ void Fons::setTauler(int fila, int columna, int color)
 
 }
 
+void Fons::moureTauler(int fila, int tauler[][MAX_COL])
+{
+    int fila_aux [MAX_COL - 5];
+    for (int j = 0; j < MAX_COL - 5; j++)
+        tauler[fila][j] = COLOR_NEGRE;
+
+    for(int i = fila; i > 0; i--)
+    {
+        for (int j = 1; j < MAX_COL - 5; j++)
+        {
+            fila_aux[j] = tauler[i][j];
+            tauler[i][j] = tauler [i -1][j];
+            tauler[i - 1][j] = fila_aux[j];
+        }
+    }
+
+
+}
+
 
 bool Fons::guanyar()
 {
@@ -122,15 +141,20 @@ bool Fons::guanyar()
 	// i fals si hi ha algun quadre a negre.
 
 
-	bool complet = true;
+	bool complet;
 
 
     for(int i = 0; i < MAX_FILA - 3; i++)
     {
-        for (int j = 3; j < MAX_COL - 3; j++)
+        complet = true;
+        for (int j = 1; j < MAX_COL - 5; j++)
         {
             if (m_tauler[i][j] == COLOR_NEGRE)
             complet = false;
+            if (j == MAX_COL - 6 && complet == true)
+                moureTauler(i, m_tauler);
+
+
         }
 
     }

@@ -58,6 +58,7 @@ class Fons
 
     protected:
     private:
+        void moureTauler(int, int[][MAX_COL]);
         int m_tauler [MAX_FILA][MAX_COL];
         Sprite m_quadrats[MAX_COLORS];
         Sprite m_fons;

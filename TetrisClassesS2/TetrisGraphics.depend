@@ -8360,7 +8360,7 @@
 1462012781 c:\users\pau\documents\github\tetris\tetrisclassess2\include\figtetris.h
 	"Fons.h"
 
-1462041021 c:\users\pau\documents\github\tetris\tetrisclassess2\include\fons.h
+1462047975 c:\users\pau\documents\github\tetris\tetrisclassess2\include\fons.h
 	"../lib/libreria.h"
 	<iostream>
 
@@ -8372,7 +8372,7 @@
 
 1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\include\gestioresultats.h
 
-1462042615 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\joc.cpp
+1462057436 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\joc.cpp
 	"Joc.h"
 	"../lib/libreria.h"
 	<cstdlib>
@@ -8387,7 +8387,7 @@
 1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\include\resultats.h
 	"../lib/libreria.h"
 
-1462047046 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\fons.cpp
+1462057105 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\fons.cpp
 	"Fons.h"
 
 1462012574 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\menu.cpp

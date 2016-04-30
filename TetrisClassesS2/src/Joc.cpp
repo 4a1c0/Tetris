@@ -40,16 +40,13 @@ void tractarEvent(int tecla, FigTetris& fig, Fons& fons)
 	switch(tecla)
 	{
 		case TECLA_ESQUERRA:
-			if (fig.moureFig(-1, 0, fons))
-                fig.moureFig(-1, 0, fons);
+			if(fig.moureFig(-1, 0, fons));
 			break;
 		case TECLA_DRETA:
-			if (fig.moureFig(1, 0, fons))
-				fig.moureFig(1, 0, fons);
+			if (fig.moureFig(1, 0, fons));
 			break;
 		case TECLA_ABAIX:
-			if (fig.moureFig(0, 2, fons))
-				fig.moureFig(0, 2, fons);
+			if (fig.moureFig(0, 2, fons));
 			break;
 		default:
 		    break;
@@ -217,11 +214,6 @@ int joc(int nivell)
             if(fons.guanyar())
             {
                 metaAconseguida = true;
-
-
-                // Reinicialitzar el fons a negre (mètode posarNegre de la classe Fons)
-
-                fons.posarNegre();
 
                 // Incrementem puntuació i nivell
                 punts += 1*nivell;
