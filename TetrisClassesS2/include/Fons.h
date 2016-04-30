@@ -49,6 +49,8 @@ class Fons
         void pintaFons();
         bool guanyar();
         void setTauler(int, int, int);
+        bool solapa(bool, int, int, int, int);
+
     protected:
     private:
         int m_tauler [MAX_FILA][MAX_COL];
