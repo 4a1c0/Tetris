@@ -93,12 +93,10 @@ int joc(int nivell)
 	int vides = 3; // Nº de vides
 	int punts = 0; // Punts
 	int diffT = 0; // Control del temps del joc
-	time_t now;
 
-    //Inizialitzar llavor per a la funció rand()
 	srand((unsigned)time(NULL));
-	// Inicialtizar variable per control del temps
-    now = time(NULL);
+
+
 
 
     // Inicialitzar els gràfics del fons i resultat cridant als mètodes Inicialitzar de les classes fons i resultat
@@ -134,6 +132,7 @@ int joc(int nivell)
         // La posició x vindria donada per ( (INICI_X) + ( ( rand() % ( ( (FI_X - INICI_X - (amplada en quadres figura actual * MIDA_Q)) / MIDA_Q ) + 1 ) ) * MIDA_Q ));
         // La posició y per (INICI_Y);
 
+
         figura[indexFig].setPosX(( (INICI_X) + ( ( rand() % ( ( (FI_X - INICI_X - (figura[indexFig].amplada() * MIDA_Q)) / MIDA_Q ) + 1 ) ) * MIDA_Q )));
         figura[indexFig].setPosY(INICI_Y);
 
@@ -141,7 +140,7 @@ int joc(int nivell)
         metaAconseguida = false;
         finalTemps = false;
         contVPeca = velocitatJoc / nivell;
-        now = time(NULL);
+
 
 
         // Dibuixar el fons, els resultats, la figura actual (cridant els mètodes corresponents de cada objecte) i refrescar pantalla (com a la primera sessió)
@@ -151,6 +150,21 @@ int joc(int nivell)
         figura[indexFig].draw();
 
         joc.VideoUpdate();
+
+        if(figura[indexFig].moureFig(0, 1, fons))
+        {
+                // Reinicialitzar el fons a negre (mètode posarNegre de la classe Fons)
+
+                fons.posarNegre();
+
+
+                // Decrementem nº de vides
+                vides--;
+
+                metaAconseguida = true;
+        }
+
+
 
         do
         {
@@ -194,23 +208,9 @@ int joc(int nivell)
 			joc.VideoUpdate();
 
             // Mira el temps que ha trigat
-            diffT = difftime(time(NULL),  now);
-            // Mira si triga molt i si ho fa perd una vida
-            if(diffT > (TEMPS_PERDUA / nivell))
-            {
-                finalTemps = true;
 
 
-                // Reinicialitzar el fons a negre (mètode posarNegre de la classe Fons)
 
-                fons.posarNegre();
-
-
-                // Decrementem nº de vides
-                vides--;
-                // Reinicialitzem control del temps
-                now = time(NULL);
-            }
 
 
             // Mira si ha fet una linia
@@ -226,14 +226,13 @@ int joc(int nivell)
                 // Incrementem puntuació i nivell
                 punts += 1*nivell;
                 nivell++;
-                // Reinicialitzem control del temps
-                now = time(NULL);
+
 
             }
 
-        }while((tecla != TECLA_ESC) && (!metaAconseguida) && (!finalTemps) && (vides>0));
+        }while((tecla != TECLA_ESC) && (!metaAconseguida) && (vides>0));
 
-	}while((nivell<4) && (vides>0) && (tecla != TECLA_ESC));
+	}while((vides>0) && (tecla != TECLA_ESC));
 
 
 	return punts;

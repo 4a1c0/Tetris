@@ -7889,3 +7889,520 @@
 1459437421 source:c:\users\pauapplecat\documents\github\tetris\tetrisclassess2\src\resultats.cpp
 	"Resultats.h"
 
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\debug.cpp
+	<cstdio>
+	<cstdarg>
+	"debug.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\debug.h
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\image_png.cpp
+	<cstdlib>
+	<cassert>
+	<png.h>
+	"debug.h"
+	"error.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\libpng\png.h
+	"pnglibconf.h"
+	"pngconf.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\libpng\pnglibconf.h
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\libpng\pngconf.h
+	<limits.h>
+	<stddef.h>
+	<stdio.h>
+	<setjmp.h>
+	<time.h>
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\error.h
+	<stdexcept>
+	<sstream>
+	<string>
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\keyboard.cpp
+	"libreria.h"
+	"keyboard.h"
+	"debug.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\libreria.h
+	"keyboard.h"
+	"mouse.h"
+	"sprites.h"
+	"video.h"
+	"sound.h"
+	<cstring>
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\keyboard.h
+	<SDL.h>
+	"keyboard_sdl.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<iconv.h>
+	<sal.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config.h
+	"SDL_platform.h"
+	"SDL_config_premake.h"
+	"SDL_config_windows.h"
+	"SDL_config_winrt.h"
+	"SDL_config_macosx.h"
+	"SDL_config_iphoneos.h"
+	"SDL_config_android.h"
+	"SDL_config_psp.h"
+	"SDL_config_minimal.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\begin_code.h
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\close_code.h
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_windows.h
+	"SDL_platform.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_winrt.h
+	"SDL_platform.h"
+	<sdkddkver.h>
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_macosx.h
+	"SDL_platform.h"
+	<AvailabilityMacros.h>
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_iphoneos.h
+	"SDL_platform.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_android.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_psp.h
+	"SDL_platform.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_config_minimal.h
+	"SDL_platform.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<mbarrier.h>
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_pixels.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012572 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\keyboard_sdl.h
+	"SDL.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\mouse.h
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\sprites.h
+	<SDL.h>
+	<SDL_image.h>
+
+1462012571 c:\users\pau\documents\github\tetris\tetrisclassess2\extlibs\sdl\include\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\video.h
+	<SDL.h>
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\sound.h
+	"stb_vorbis.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\stb_vorbis.h
+	<stdio.h>
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\mouse.cpp
+	"video.h"
+	"mouse.h"
+	"libreria.h"
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\sound.cpp
+	<SDL.h>
+	<stdlib.h>
+	<math.h>
+	<cassert>
+	"libreria.h"
+	"sound.h"
+	"stb_vorbis.h"
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\sprites.cpp
+	<cstdlib>
+	<cassert>
+	"image_png.h"
+	"video.h"
+	"sprites.h"
+	"error.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\lib\image_png.h
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\stb_vorbis.cpp
+	"stb_vorbis.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<math.h>
+	<malloc.h>
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\lib\video.cpp
+	"keyboard.h"
+	"mouse.h"
+	"video.h"
+	"error.h"
+	<iostream>
+	<windows.h>
+
+1462047476 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\figtetris.cpp
+	"FigTetris.h"
+
+1462012781 c:\users\pau\documents\github\tetris\tetrisclassess2\include\figtetris.h
+	"Fons.h"
+
+1462041021 c:\users\pau\documents\github\tetris\tetrisclassess2\include\fons.h
+	"../lib/libreria.h"
+	<iostream>
+
+1462012573 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\gestioresultats.cpp
+	"GestioResultats.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\include\gestioresultats.h
+
+1462042615 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\joc.cpp
+	"Joc.h"
+	"../lib/libreria.h"
+	<cstdlib>
+	"Resultats.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\include\joc.h
+	<conio.h>
+	<stdio.h>
+	<time.h>
+	"FigTetris.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\include\resultats.h
+	"../lib/libreria.h"
+
+1462047046 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\fons.cpp
+	"Fons.h"
+
+1462012574 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\menu.cpp
+	"Menu.h"
+
+1462012573 c:\users\pau\documents\github\tetris\tetrisclassess2\include\menu.h
+	<stdio.h>
+	<stdlib.h>
+
+1462012574 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\principal.cpp
+	"Menu.h"
+	"Joc.h"
+	"GestioResultats.h"
+	<conio.h>
+
+1462012574 source:c:\users\pau\documents\github\tetris\tetrisclassess2\src\resultats.cpp
+	"Resultats.h"
+

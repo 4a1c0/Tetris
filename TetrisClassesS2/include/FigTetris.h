@@ -18,7 +18,7 @@ const int FI_FIG = P;
 
 const int MAX_FIG = 7;
 
-const int MAX_MASCARA = 4;
+
 
 class FigTetris
 {

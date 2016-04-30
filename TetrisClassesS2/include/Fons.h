@@ -2,6 +2,9 @@
 #define FONS_H
 
 #include "../lib/libreria.h"
+#include <iostream>
+
+using namespace std;
 
 
 //========================================================================
@@ -20,8 +23,8 @@ const int FI_Y = 547;
 
 //========================================================================
 // Mida Tauler en files i columnes
-const int MAX_FILA = 22;
-const int MAX_COL = 13;
+const int MAX_FILA = 24;
+const int MAX_COL = 17;
 
 //========================================================================
 // Colors dels cuadrats
@@ -38,6 +41,8 @@ const int COLOR_GRIS = 8;
 // Maxim nombre de colors de les figures
 const int MAX_COLORS = 7;
 
+const int MAX_MASCARA = 4;
+
 class Fons
 {
     public:
@@ -49,7 +54,7 @@ class Fons
         void pintaFons();
         bool guanyar();
         void setTauler(int, int, int);
-        bool solapa(bool, int, int, int, int);
+        bool solapa(bool[][MAX_MASCARA], int, int, int, int);
 
     protected:
     private:
