@@ -18,6 +18,8 @@ const int FI_FIG = P;
 
 const int MAX_FIG = 7;
 
+
+
 class FigTetris
 {
     public:
@@ -41,6 +43,7 @@ class FigTetris
         int m_posY;
         int m_indexFig;
         int m_color;
+        bool m_mascara[MAX_MASCARA][MAX_MASCARA];// true = ocupat false = buit
 };
 
 #endif // FIGTETRIS_H
