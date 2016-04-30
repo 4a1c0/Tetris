@@ -39,9 +39,9 @@ void Fons::posarNegre()
 
     // Heu d'inicialitzar totes les posicions interiors (que no són límits) de la matriu m_tauler a negre
 
-    for (int j = 0; j < MAX_FILA - 3; j++)
+    for (int j = 0; j < MAX_FILA - 1; j++)
     {
-        for (int i = 3; i < MAX_COL - 3; i++)
+        for (int i = 1; i < MAX_COL - 1; i++)
         {
             m_tauler[i][j] = COLOR_NEGRE;
         }
@@ -57,23 +57,15 @@ void Fons::posarGris()
 
     for (int i = 0; i < MAX_COL; i++)
     {
-        for(int j = MAX_FILA - 3; j < MAX_FILA; j++)
-        {
-            m_tauler[i][j] = COLOR_GRIS;
-        }
-
+        m_tauler[i][MAX_FILA] = COLOR_GRIS;
     }
 
-    for(int i = 0; i < 3; i++)
+
+    for (int j = 0; j < MAX_FILA; j++)
     {
-        for (int j = 0; j < MAX_FILA; j++)
-        {
-
-            m_tauler[i][j] = COLOR_GRIS;
-            m_tauler[MAX_COL - i][j] = COLOR_GRIS;
-        }
+        m_tauler[0][j] = COLOR_GRIS;
+        m_tauler[MAX_COL][j] = COLOR_GRIS;
     }
-
 
 
 
@@ -120,34 +112,12 @@ bool Fons::guanyar()
 
 	bool complet = true;
 
-	int j = MAX_FILA - 4; // degut a que de moment nomes fem servir la ultima fila
-    for(int i = 3; i < MAX_COL - 3; i++)
+	int j = MAX_FILA - 2; // degut a que de moment nomes fem servir la ultima fila
+    for(int i = 1; i < MAX_COL - 1; i++)
     {
         if (m_tauler[i][j] == COLOR_NEGRE)
             complet = false;
     }
 
     return complet;
-}
-
-bool Fons::solapa(bool mascara[][MAX_MASCARA], int posX, int posY, int dirX, int dirY)
-{
-    bool solapa false;
-
-
-        for(int i = 0; i < MAX_MASCARA; i++)
-        {
-            for(int j = 0; j < MAX_MASCARA; j++)
-            {
-                while(mascara[i][j])
-                {
-                    if (m_tauler[posX + i + dirX][posY + j + dirY] != COLOR_NEGRE)
-                        solapa = true;
-                }
-            }
-        }
-
-
-
-
 }

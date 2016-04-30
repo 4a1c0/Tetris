@@ -47,16 +47,6 @@ void FigTetris::create(int indexFig)
     // Z:("data/Graficstetris/zroig1.png")
     // Per cada figura, a més a més de crear el gràfic heu d'inicialitzar la resta dels atributs de la classe (amplada, alçada, index i color)
 
-    //Inicialitzar la mascara a false
-
-    for(int i = 0; i < MAX_MASCARA; i++)
-    {
-        for(int j = 0; j<MAX_MASCARA; j++)
-        {
-            m_mascara[i][j] = false;
-        }
-    }
-
     switch (indexFig)
     {
         case O:
@@ -65,11 +55,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_GROC;
-            m_mascara[0][0]=true;
-            m_mascara[0][1]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-
             break;
         case L:
             m_figura.Create("data/Graficstetris/ltaronja2.png");
@@ -77,12 +62,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_TARONJA;
-
-            m_mascara[0][2]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
-
             break;
         case Z:
             m_figura.Create("data/Graficstetris/zroig1.png");
@@ -90,11 +69,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_ROIG;
-            m_mascara[0][0]=true;
-            m_mascara[0][1]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
-
             break;
         case T:
             m_figura.Create("data/Graficstetris/tmagenta2.png");
@@ -102,10 +76,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_MAGENTA;
-            m_mascara[0][1]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
             break;
         case S:
             m_figura.Create("data/Graficstetris/sverd1.png");
@@ -113,10 +83,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_VERD;
-            m_mascara[0][1]=true;
-            m_mascara[0][2]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
             break;
         case I:
             m_figura.Create("data/Graficstetris/palblaucel1.png");
@@ -124,10 +90,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 4;
             m_indexFig = indexFig;
             m_color = COLOR_BLAUCEL;
-            m_mascara[0][0]=true;
-            m_mascara[0][1]=true;
-            m_mascara[0][2]=true;
-            m_mascara[0][3]=true;
             break;
         case P:
             m_figura.Create("data/Graficstetris/pblaufosc4.png");
@@ -135,10 +97,6 @@ void FigTetris::create(int indexFig)
             m_alcada = 2;
             m_indexFig = indexFig;
             m_color = COLOR_BLAUFOSC;
-            m_mascara[0][0]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
             break;
         default:
             break;
@@ -178,18 +136,16 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 
     bool arribada = false;
 
-
-
-    if ((dirX == -1) && (solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
+    if ((dirX == -1) && ((m_posX) > (INICI_X))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
         m_posX -= MIDA_Q;
 
-    if ((dirX == 1) && ((solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY)))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
+    if ((dirX == 1) && (((m_posX) + (m_amplada * MIDA_Q)) < (FI_X))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
         m_posX += MIDA_Q;
 
-    if ((dirY == 1) && (solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY))) //ABAIX Normal (1 pos): mirem els límits
+    if ((dirY == 1) && ((m_posY + m_alcada * MIDA_Q) < FI_Y)) //ABAIX Normal (1 pos): mirem els límits
         m_posY += MIDA_Q;
 
-    if ((dirY == 2) && (solapa(m_mascara, m_posX / MIDA_Q, m_posY / MIDA_Q, dirX, dirY))) //ABAIX Tecla (2 pos): mirem limits
+    if ((dirY == 2) && ((m_posY + m_alcada * MIDA_Q + MIDA_Q) < FI_Y)) //ABAIX Tecla (2 pos): mirem limits
         m_posY += 2 * MIDA_Q;
 
     if ((m_posY + m_alcada * MIDA_Q) > (FI_Y - MIDA_Q)) //Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
