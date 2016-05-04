@@ -52,7 +52,7 @@ class Fons
         void posarNegre();
         void posarGris();
         void pintaFons();
-        bool guanyar();
+        bool guanyar(int&);
         void setTauler(int, int, int);
         bool solapa(bool[][MAX_MASCARA], int, int, int, int);
 

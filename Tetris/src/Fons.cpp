@@ -134,7 +134,7 @@ void Fons::moureTauler(int fila, int tauler[][MAX_COL])
 }
 
 
-bool Fons::guanyar()
+bool Fons::guanyar(int &fcompletes)
 {
 
 	// Heu de retornar cert si la última línia del tauler que no està gris està tota pintada de colors
@@ -142,6 +142,7 @@ bool Fons::guanyar()
 
 
 	bool complet;
+	fcompletes=0;
 
 
     for(int i = 0; i < MAX_FILA - 3; i++)
@@ -152,14 +153,20 @@ bool Fons::guanyar()
             if (m_tauler[i][j] == COLOR_NEGRE)
             complet = false;
             if (j == MAX_COL - 6 && complet == true)
+            {
                 moureTauler(i, m_tauler);
+                fcompletes++;
+            }
+
+
 
 
         }
 
+
     }
 
-    return complet;
+    return fcompletes>0;
 }
 
 bool Fons::solapa(bool mascara[][MAX_MASCARA], int posX, int posY, int dirX, int dirY)

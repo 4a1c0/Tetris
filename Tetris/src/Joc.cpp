@@ -84,12 +84,12 @@ int joc(int nivell)
 	// Declaracions de variables. No s'han de modificar
     int tecla = 0; // Valor de la tecla pressionada en cada iteració del joc
     bool metaAconseguida; // Indica si la figura ha arribat a la última línia del taules
-    bool finalTemps; // Indica si se'ns ha acabat el temps per completar la última línia del tauler
 	int velocitatJoc = 400; // Indica velocitat del joc, quantes més linies es fan més ràpida és
 	int contVPeca; // Comptador per controlar la velocitat
 	int vides = 3; // Nº de vides
 	int punts = 0; // Punts
-	int diffT = 0; // Control del temps del joc
+
+	int fcompletades = 0; //nombre de files completades a la vegada
 
 	srand((unsigned)time(NULL));
 
@@ -135,7 +135,6 @@ int joc(int nivell)
 
         // Inicialitzar variables que controlen si s'ha omplert la última línia i la velocitat del joc
         metaAconseguida = false;
-        finalTemps = false;
         contVPeca = velocitatJoc / nivell;
 
 
@@ -211,13 +210,14 @@ int joc(int nivell)
 
 
             // Mira si ha fet una linia
-            if(fons.guanyar())
+            if(fons.guanyar(fcompletades))
             {
                 metaAconseguida = true;
 
                 // Incrementem puntuació i nivell
-                punts += 1*nivell;
-                nivell++;
+                punts += fcompletades*(nivell += fcompletades);
+
+
 
 
             }
