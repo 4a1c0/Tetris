@@ -9388,17 +9388,17 @@
 	<iostream>
 	<windows.h>
 
-1462060283 source:c:\users\pau\documents\github\tetris\tetris\src\figtetris.cpp
+1462451898 source:c:\users\pau\documents\github\tetris\tetris\src\figtetris.cpp
 	"FigTetris.h"
 
-1462060283 c:\users\pau\documents\github\tetris\tetris\include\figtetris.h
+1462446184 c:\users\pau\documents\github\tetris\tetris\include\figtetris.h
 	"Fons.h"
 
-1462353607 c:\users\pau\documents\github\tetris\tetris\include\fons.h
+1462392624 c:\users\pau\documents\github\tetris\tetris\include\fons.h
 	"../lib/libreria.h"
 	<iostream>
 
-1462353676 source:c:\users\pau\documents\github\tetris\tetris\src\fons.cpp
+1462392721 source:c:\users\pau\documents\github\tetris\tetris\src\fons.cpp
 	"Fons.h"
 
 1462060283 source:c:\users\pau\documents\github\tetris\tetris\src\gestioresultats.cpp
@@ -9409,13 +9409,13 @@
 
 1462060283 c:\users\pau\documents\github\tetris\tetris\include\gestioresultats.h
 
-1462354107 source:c:\users\pau\documents\github\tetris\tetris\src\joc.cpp
+1462451608 source:c:\users\pau\documents\github\tetris\tetris\src\joc.cpp
 	"Joc.h"
 	"../lib/libreria.h"
 	<cstdlib>
 	"Resultats.h"
 
-1462060283 c:\users\pau\documents\github\tetris\tetris\include\joc.h
+1462447176 c:\users\pau\documents\github\tetris\tetris\include\joc.h
 	<conio.h>
 	<stdio.h>
 	<time.h>

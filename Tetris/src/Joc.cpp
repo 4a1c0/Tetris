@@ -22,6 +22,12 @@ int llegirEvent()
             else
                 if (Keyboard_GetKeyTrg(KEYBOARD_ESCAPE))
                     tecla = TECLA_ESC;
+                    else
+                        if (Keyboard_GetKeyTrg(KEYBOARD_UP))
+                            tecla = TECLA_AMUNT;
+                            else
+                                if (Keyboard_GetKeyTrg(KEYBOARD_SPACE))
+                                tecla = TECLA_ESPAI;
     return tecla;
 }
 
@@ -48,6 +54,11 @@ void tractarEvent(int tecla, FigTetris& fig, Fons& fons)
 		case TECLA_ABAIX:
 			if (fig.moureFig(0, 2, fons));
 			break;
+        case TECLA_AMUNT:
+        case TECLA_ESPAI:
+            if (fig.gir(fons));
+            break;
+            break;
 		default:
 		    break;
 	}
@@ -61,7 +72,7 @@ void crearFigTetris(FigTetris* figTetrisActual)
 
     for (int i = 0; i < MAX_FIG; i++)
     {
-        figTetrisActual[i].create(i);
+        figTetrisActual[i].create(i, 0);
     }
 }
 
@@ -117,10 +128,13 @@ int joc(int nivell)
     FigTetris figura[MAX_FIG];
     crearFigTetris(figura);
 
+
+
 	do
     {
         // Definició i inicialització aleatoria de la figura del tetris
         int indexFig  = aleatori(INI_FIG, FI_FIG);
+        int gir = aleatori(0, MAX_GIRS - 1);
 
 
 

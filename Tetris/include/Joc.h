@@ -10,8 +10,9 @@ const int  TECLA_ESC = 27;
 const int  TECLA_DRETA = 77;
 const int  TECLA_ESQUERRA = 75;
 const int  TECLA_ABAIX = 80;
+const int  TECLA_AMUNT = KEYBOARD_UP;
+const int  TECLA_ESPAI = KEYBOARD_SPACE;
 
-const int TEMPS_PERDUA = 30;
 
 void pintarPeca(int x, int y, int obj);
 

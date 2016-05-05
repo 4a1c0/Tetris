@@ -125,7 +125,7 @@ void Fons::moureTauler(int fila, int tauler[][MAX_COL])
         for (int j = 1; j < MAX_COL - 5; j++)
         {
             fila_aux[j] = tauler[i][j];
-            tauler[i][j] = tauler [i -1][j];
+            tauler[i][j] = tauler [i - 1][j];
             tauler[i - 1][j] = fila_aux[j];
         }
     }
@@ -166,10 +166,10 @@ bool Fons::guanyar(int &fcompletes)
 
     }
 
-    return fcompletes>0;
+    return fcompletes > 0;
 }
 
-bool Fons::solapa(bool mascara[][MAX_MASCARA], int posX, int posY, int dirX, int dirY)
+bool Fons::solapa(bool** mascara, int posX, int posY, int dirX, int dirY)
 {
     bool solapa = false;
 
