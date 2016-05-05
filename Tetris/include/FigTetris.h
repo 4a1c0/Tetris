@@ -35,11 +35,11 @@ class FigTetris
         void figuraEncaixada(Fons&);
         bool gir(Fons&);
         void crearMascara();
-        void destruirMascara();
+
 
     protected:
     private:
-        Sprite m_figura[MAX_GIRS];
+        Sprite *m_figura;
         int m_amplada [MAX_GIRS];
         int m_alcada;
         int m_posX;

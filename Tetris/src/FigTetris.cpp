@@ -9,6 +9,25 @@ FigTetris::~FigTetris()
 {
     // Destructor. No s'ha de modificar
 
+    //destruir mascara
+         for(int i = 0; i < m_girs; i++)
+    {
+
+        for(int j = 0; j < MAX_MASCARA; j++)
+        {
+            delete[] m_mascara[i][j];
+
+        }
+        delete[] m_mascara[i];
+    }
+    delete[] m_mascara;
+
+    m_mascara = NULL;
+
+    //destrueix sprites
+    delete[] m_figura;
+
+
 }
 
 void FigTetris::setPosX(int posX)
@@ -51,22 +70,7 @@ void FigTetris::crearMascara()
         }
     }
 }
-void FigTetris::destruirMascara()
-{
-     for(int i = 0; i < m_girs; i++)
-    {
 
-        for(int j = 0; j < MAX_MASCARA; j++)
-        {
-            delete[] m_mascara[i][j];
-
-        }
-        delete[] m_mascara[i];
-    }
-    delete[] m_mascara;
-
-    m_mascara = NULL;
-}
 
 
 void FigTetris::create(int indexFig,int gir)
@@ -99,6 +103,7 @@ void FigTetris::create(int indexFig,int gir)
     {
         case O:
 
+            m_figura = new Sprite[1];
             m_figura[0].Create("data/Graficstetris/q4groc1.png");
 
             m_indexFig = indexFig;
@@ -117,6 +122,7 @@ void FigTetris::create(int indexFig,int gir)
 
             break;
         case L:
+            m_figura = new Sprite[4];
             m_figura[0].Create("data/Graficstetris/ltaronja1.png");
             m_figura[1].Create("data/Graficstetris/ltaronja2.png");
             m_figura[2].Create("data/Graficstetris/ltaronja3.png");
@@ -153,6 +159,7 @@ void FigTetris::create(int indexFig,int gir)
 
             break;
         case Z:
+            m_figura = new Sprite[2];
             m_figura[0].Create("data/Graficstetris/zroig1.png");
             m_figura[1].Create("data/Graficstetris/zroig2.png");
 
@@ -179,6 +186,7 @@ void FigTetris::create(int indexFig,int gir)
 
             break;
         case T:
+            m_figura = new Sprite[4];
             m_figura[0].Create("data/Graficstetris/tmagenta1.png");
             m_figura[1].Create("data/Graficstetris/tmagenta2.png");
             m_figura[2].Create("data/Graficstetris/tmagenta3.png");
@@ -214,6 +222,7 @@ void FigTetris::create(int indexFig,int gir)
             break;
 
         case S:
+            m_figura = new Sprite[2];
             m_figura[0].Create("data/Graficstetris/sverd1.png");
             m_figura[1].Create("data/Graficstetris/sverd2.png");
 
@@ -239,6 +248,7 @@ void FigTetris::create(int indexFig,int gir)
 
             break;
         case I:
+            m_figura = new Sprite[2];
             m_figura[0].Create("data/Graficstetris/palblaucel1.png");
             m_figura[1].Create("data/Graficstetris/palblaucel2.png");
 
@@ -264,6 +274,7 @@ void FigTetris::create(int indexFig,int gir)
 
             break;
         case P:
+            m_figura = new Sprite[4];
             m_figura[0].Create("data/Graficstetris/pblaufosc1.png");
             m_figura[1].Create("data/Graficstetris/pblaufosc2.png");
             m_figura[2].Create("data/Graficstetris/pblaufosc3.png");

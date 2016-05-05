@@ -9388,10 +9388,10 @@
 	<iostream>
 	<windows.h>
 
-1462460787 source:c:\users\pau\documents\github\tetris\tetris\src\figtetris.cpp
+1462466333 source:c:\users\pau\documents\github\tetris\tetris\src\figtetris.cpp
 	"FigTetris.h"
 
-1462460787 c:\users\pau\documents\github\tetris\tetris\include\figtetris.h
+1462466159 c:\users\pau\documents\github\tetris\tetris\include\figtetris.h
 	"Fons.h"
 
 1462392624 c:\users\pau\documents\github\tetris\tetris\include\fons.h
@@ -9409,7 +9409,7 @@
 
 1462060283 c:\users\pau\documents\github\tetris\tetris\include\gestioresultats.h
 
-1462460865 source:c:\users\pau\documents\github\tetris\tetris\src\joc.cpp
+1462466149 source:c:\users\pau\documents\github\tetris\tetris\src\joc.cpp
 	"Joc.h"
 	"../lib/libreria.h"
 	<cstdlib>

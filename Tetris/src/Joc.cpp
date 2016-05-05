@@ -240,10 +240,6 @@ int joc(int nivell)
 
 	}while((vides>0) && (tecla != TECLA_ESC));
 
-	    for (int i = 0; i < MAX_FIG; i++)
-    {
-        figura[i].destruirMascara();
-    }
 
 
 	return punts;
