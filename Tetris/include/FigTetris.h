@@ -24,7 +24,7 @@ class FigTetris
 {
     public:
         FigTetris();
-        virtual ~FigTetris();
+        ~FigTetris();
         void draw();
         void create(int, int);
         int alcada();
@@ -34,6 +34,8 @@ class FigTetris
         void setPosY(int);
         void figuraEncaixada(Fons&);
         bool gir(Fons&);
+        void crearMascara();
+        void destruirMascara();
 
     protected:
     private:
@@ -45,6 +47,7 @@ class FigTetris
         int m_indexFig;
         int m_color;
         int m_gir; //int entre 0 i 3;
+        int m_girs;
         bool ***m_mascara;// true = ocupat false = buit
 };
 

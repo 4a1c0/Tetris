@@ -8,19 +8,7 @@ FigTetris::FigTetris()
 FigTetris::~FigTetris()
 {
     // Destructor. No s'ha de modificar
-        for(int i = 0; i < MAX_MASCARA; i++)
-    {
 
-        for(int j = 0; j<MAX_GIRS; j++)
-        {
-            delete[] m_mascara[i][j];
-
-        }
-        delete[] m_mascara[i];
-    }
-    delete[] m_mascara;
-
-    m_mascara = NULL;
 }
 
 void FigTetris::setPosX(int posX)
@@ -46,6 +34,41 @@ void FigTetris::draw()
     m_figura[m_gir].Draw(m_posX, m_posY);
 }
 
+void FigTetris::crearMascara()
+{
+    m_mascara = new bool**[m_girs];
+
+    for(int i = 0; i < m_girs; i++)
+    {
+        m_mascara[i] = new bool*[MAX_MASCARA];
+        for(int j = 0; j<MAX_MASCARA; j++)
+        {
+            m_mascara[i][j] = new bool[MAX_MASCARA];
+            for(int k = 0; k < MAX_MASCARA; k++)
+            {
+                m_mascara[i][j][k] = false;
+            }
+        }
+    }
+}
+void FigTetris::destruirMascara()
+{
+     for(int i = 0; i < m_girs; i++)
+    {
+
+        for(int j = 0; j < MAX_MASCARA; j++)
+        {
+            delete[] m_mascara[i][j];
+
+        }
+        delete[] m_mascara[i];
+    }
+    delete[] m_mascara;
+
+    m_mascara = NULL;
+}
+
+
 void FigTetris::create(int indexFig,int gir)
 {
 
@@ -62,20 +85,9 @@ void FigTetris::create(int indexFig,int gir)
 
     //Inicialitzar la mascara a false
 
-    m_mascara = new bool**[MAX_GIRS];
 
-    for(int i = 0; i < MAX_GIRS; i++)
-    {
-        m_mascara[i] = new bool*[MAX_MASCARA];
-        for(int j = 0; j<MAX_MASCARA; j++)
-        {
-            m_mascara[i][j] = new bool[MAX_MASCARA];
-            for(int k = 0; k < MAX_MASCARA; k++)
-            {
-                m_mascara[i][j][k] = false;
-            }
-        }
-    }
+
+
 
     //definir gir
 
@@ -91,6 +103,9 @@ void FigTetris::create(int indexFig,int gir)
 
             m_indexFig = indexFig;
             m_color = COLOR_GROC;
+            m_girs = 1;
+
+            crearMascara();
 
             m_mascara[0][0][0]=true;
             m_mascara[0][0][1]=true;
@@ -98,9 +113,6 @@ void FigTetris::create(int indexFig,int gir)
             m_mascara[0][1][1]=true;
             m_amplada[0] = 2;
             m_gir = 0;
-
-
-
 
 
             break;
@@ -112,11 +124,14 @@ void FigTetris::create(int indexFig,int gir)
 
             m_indexFig = indexFig;
             m_color = COLOR_TARONJA;
+            m_girs = 4;
 
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
             m_mascara[0][0][1]=true;
-            m_mascara[0][0][2]=true;
-            m_mascara[0][1][2]=true;
-            m_mascara[0][2][2]=true;
+            m_mascara[0][1][1]=true;
+            m_mascara[0][2][1]=true;
             m_amplada[0] = 3;
             m_mascara[1][0][2]=true;
             m_mascara[1][1][0]=true;
@@ -134,12 +149,20 @@ void FigTetris::create(int indexFig,int gir)
             m_mascara[3][1][0]=true;
             m_amplada[3] = 3;
 
+
+
             break;
         case Z:
             m_figura[0].Create("data/Graficstetris/zroig1.png");
             m_figura[1].Create("data/Graficstetris/zroig2.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_ROIG;
+
+            m_girs = 2;
+
+            crearMascara();
+
             m_mascara[0][0][0]=true;
             m_mascara[0][0][1]=true;
             m_mascara[0][1][1]=true;
@@ -164,9 +187,13 @@ void FigTetris::create(int indexFig,int gir)
             m_indexFig = indexFig;
             m_color = COLOR_MAGENTA;
 
+            m_girs = 4;
+
+            crearMascara();
+
             m_mascara[0][0][0]=true;
-            m_mascara[0][0][1]=true;
-            m_mascara[0][0][2]=true;
+            m_mascara[0][1][0]=true;
+            m_mascara[0][2][0]=true;
             m_mascara[0][1][1]=true;
             m_amplada[0] = 2;
             m_mascara[1][0][1]=true;
@@ -193,6 +220,10 @@ void FigTetris::create(int indexFig,int gir)
             m_indexFig = indexFig;
             m_color = COLOR_VERD;
 
+            m_girs = 2;
+
+            crearMascara();
+
             m_mascara[0][0][1]=true;
             m_mascara[0][0][2]=true;
             m_mascara[0][1][0]=true;
@@ -213,6 +244,10 @@ void FigTetris::create(int indexFig,int gir)
 
             m_indexFig = indexFig;
             m_color = COLOR_BLAUCEL;
+
+            m_girs = 2;
+
+            crearMascara();
 
             m_mascara[0][0][0]=true;
             m_mascara[0][1][0]=true;
@@ -237,6 +272,10 @@ void FigTetris::create(int indexFig,int gir)
             m_indexFig = indexFig;
             m_color = COLOR_BLAUFOSC;
 
+            m_girs = 4;
+
+            crearMascara();
+
             m_mascara[0][0][0]=true;
             m_mascara[0][1][0]=true;
             m_mascara[0][2][0]=true;
@@ -247,10 +286,10 @@ void FigTetris::create(int indexFig,int gir)
             m_mascara[1][0][2]=true;
             m_mascara[1][1][2]=true;
             m_amplada[1] = 3;
-            m_mascara[2][1][0]=true;
+            m_mascara[2][0][1]=true;
             m_mascara[2][1][1]=true;
-            m_mascara[2][1][2]=true;
-            m_mascara[2][0][2]=true;
+            m_mascara[2][2][1]=true;
+            m_mascara[2][2][0]=true;
             m_amplada[2] = 2;
             m_mascara[3][0][0]=true;
             m_mascara[3][1][0]=true;
