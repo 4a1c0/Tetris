@@ -42,6 +42,7 @@ const int COLOR_GRIS = 8;
 const int MAX_COLORS = 7;
 
 const int MAX_MASCARA = 4;
+const int MAX_GIRS = 4;
 
 class Fons
 {
@@ -54,7 +55,7 @@ class Fons
         void pintaFons();
         bool guanyar(int&);
         void setTauler(int, int, int);
-        bool solapa(bool[][MAX_MASCARA], int, int, int, int);
+        bool solapa(bool**, int, int, int, int);
 
     protected:
     private:

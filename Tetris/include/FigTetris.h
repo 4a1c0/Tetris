@@ -24,26 +24,31 @@ class FigTetris
 {
     public:
         FigTetris();
-        virtual ~FigTetris();
+        ~FigTetris();
         void draw();
-        void create(int);
+        void create(int, int);
         int alcada();
         int amplada();
         bool moureFig(int, int, Fons&);
         void setPosX(int);
         void setPosY(int);
         void figuraEncaixada(Fons&);
+        bool gir(Fons&);
+        void crearMascara();
+
 
     protected:
     private:
-        Sprite m_figura;
-        int m_amplada;
+        Sprite *m_figura;
+        int m_amplada [MAX_GIRS];
         int m_alcada;
         int m_posX;
         int m_posY;
         int m_indexFig;
         int m_color;
-        bool m_mascara[MAX_MASCARA][MAX_MASCARA];// true = ocupat false = buit
+        int m_gir; //int entre 0 i 3;
+        int m_girs;
+        bool ***m_mascara;// true = ocupat false = buit
 };
 
 #endif // FIGTETRIS_H

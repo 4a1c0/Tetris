@@ -8,6 +8,26 @@ FigTetris::FigTetris()
 FigTetris::~FigTetris()
 {
     // Destructor. No s'ha de modificar
+
+    //destruir mascara
+         for(int i = 0; i < m_girs; i++)
+    {
+
+        for(int j = 0; j < MAX_MASCARA; j++)
+        {
+            delete[] m_mascara[i][j];
+
+        }
+        delete[] m_mascara[i];
+    }
+    delete[] m_mascara;
+
+    m_mascara = NULL;
+
+    //destrueix sprites
+    delete[] m_figura;
+
+
 }
 
 void FigTetris::setPosX(int posX)
@@ -30,10 +50,30 @@ void FigTetris::draw()
 {
 
     // Heu e dibuixar el gràfic de la figura del tetris a la posicio m_posX, m_posY
-    m_figura.Draw(m_posX, m_posY);
+    m_figura[m_gir].Draw(m_posX, m_posY);
 }
 
-void FigTetris::create(int indexFig)
+void FigTetris::crearMascara()
+{
+    m_mascara = new bool**[m_girs];
+
+    for(int i = 0; i < m_girs; i++)
+    {
+        m_mascara[i] = new bool*[MAX_MASCARA];
+        for(int j = 0; j<MAX_MASCARA; j++)
+        {
+            m_mascara[i][j] = new bool[MAX_MASCARA];
+            for(int k = 0; k < MAX_MASCARA; k++)
+            {
+                m_mascara[i][j][k] = false;
+            }
+        }
+    }
+}
+
+
+
+void FigTetris::create(int indexFig,int gir)
 {
 
     // Heu de crear una de les figures del tetris en funció de l'índex que es passa com a paràmetre
@@ -49,96 +89,224 @@ void FigTetris::create(int indexFig)
 
     //Inicialitzar la mascara a false
 
-    for(int i = 0; i < MAX_MASCARA; i++)
-    {
-        for(int j = 0; j<MAX_MASCARA; j++)
-        {
-            m_mascara[i][j] = false;
-        }
-    }
+
+
+
+
+    //definir gir
+
+    m_gir = gir;
+
+
 
     switch (indexFig)
     {
         case O:
-            m_figura.Create("data/Graficstetris/q4groc1.png");
-            m_amplada = 2;
-            m_alcada = 2;
+
+            m_figura = new Sprite[1];
+            m_figura[0].Create("data/Graficstetris/q4groc1.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_GROC;
-            m_mascara[0][0]=true;
-            m_mascara[0][1]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
+            m_girs = 1;
+
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
+            m_mascara[0][0][1]=true;
+            m_mascara[0][1][0]=true;
+            m_mascara[0][1][1]=true;
+            m_amplada[0] = 2;
+            m_gir = 0;
+
 
             break;
         case L:
-            m_figura.Create("data/Graficstetris/ltaronja2.png");
-            m_amplada = 3;
-            m_alcada = 2;
+            m_figura = new Sprite[4];
+            m_figura[0].Create("data/Graficstetris/ltaronja1.png");
+            m_figura[1].Create("data/Graficstetris/ltaronja2.png");
+            m_figura[2].Create("data/Graficstetris/ltaronja3.png");
+            m_figura[3].Create("data/Graficstetris/ltaronja4.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_TARONJA;
+            m_girs = 4;
 
-            m_mascara[0][2]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
+            m_mascara[0][0][1]=true;
+            m_mascara[0][1][1]=true;
+            m_mascara[0][2][1]=true;
+            m_amplada[0] = 3;
+            m_mascara[1][0][2]=true;
+            m_mascara[1][1][0]=true;
+            m_mascara[1][1][1]=true;
+            m_mascara[1][1][2]=true;
+            m_amplada[2] = 3;
+            m_mascara[2][0][0]=true;
+            m_mascara[2][1][0]=true;
+            m_mascara[2][2][0]=true;
+            m_mascara[2][2][1]=true;
+            m_amplada[2] = 2;
+            m_mascara[3][0][0]=true;
+            m_mascara[3][0][1]=true;
+            m_mascara[3][0][2]=true;
+            m_mascara[3][1][0]=true;
+            m_amplada[3] = 3;
+
+
 
             break;
         case Z:
-            m_figura.Create("data/Graficstetris/zroig1.png");
-            m_amplada = 3;
-            m_alcada = 2;
+            m_figura = new Sprite[2];
+            m_figura[0].Create("data/Graficstetris/zroig1.png");
+            m_figura[1].Create("data/Graficstetris/zroig2.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_ROIG;
-            m_mascara[0][0]=true;
-            m_mascara[0][1]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
+
+            m_girs = 2;
+
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
+            m_mascara[0][0][1]=true;
+            m_mascara[0][1][1]=true;
+            m_mascara[0][1][2]=true;
+            m_amplada[0] = 3;
+            m_mascara[1][0][1]=true;
+            m_mascara[1][1][0]=true;
+            m_mascara[1][1][1]=true;
+            m_mascara[1][2][0]=true;
+            m_amplada[1] = 2;
+
+            m_gir = gir%2;
+
 
             break;
         case T:
-            m_figura.Create("data/Graficstetris/tmagenta2.png");
-            m_amplada = 3;
-            m_alcada = 2;
+            m_figura = new Sprite[4];
+            m_figura[0].Create("data/Graficstetris/tmagenta1.png");
+            m_figura[1].Create("data/Graficstetris/tmagenta2.png");
+            m_figura[2].Create("data/Graficstetris/tmagenta3.png");
+            m_figura[3].Create("data/Graficstetris/tmagenta4.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_MAGENTA;
-            m_mascara[0][1]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
+
+            m_girs = 4;
+
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
+            m_mascara[0][1][0]=true;
+            m_mascara[0][2][0]=true;
+            m_mascara[0][1][1]=true;
+            m_amplada[0] = 2;
+            m_mascara[1][0][1]=true;
+            m_mascara[1][1][0]=true;
+            m_mascara[1][1][1]=true;
+            m_mascara[1][1][2]=true;
+            m_amplada[1] = 3;
+            m_mascara[2][0][1]=true;
+            m_mascara[2][1][0]=true;
+            m_mascara[2][1][1]=true;
+            m_mascara[2][2][1]=true;
+            m_amplada[2] = 2;
+            m_mascara[3][0][0]=true;
+            m_mascara[3][0][1]=true;
+            m_mascara[3][0][2]=true;
+            m_mascara[3][1][1]=true;
+            m_amplada[3] = 3;
             break;
+
         case S:
-            m_figura.Create("data/Graficstetris/sverd1.png");
-            m_amplada = 3;
-            m_alcada = 2;
+            m_figura = new Sprite[2];
+            m_figura[0].Create("data/Graficstetris/sverd1.png");
+            m_figura[1].Create("data/Graficstetris/sverd2.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_VERD;
-            m_mascara[0][1]=true;
-            m_mascara[0][2]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
+
+            m_girs = 2;
+
+            crearMascara();
+
+            m_mascara[0][0][1]=true;
+            m_mascara[0][0][2]=true;
+            m_mascara[0][1][0]=true;
+            m_mascara[0][1][1]=true;
+            m_amplada[0] = 3;
+            m_mascara[1][0][0]=true;
+            m_mascara[1][1][0]=true;
+            m_mascara[1][1][1]=true;
+            m_mascara[1][2][1]=true;
+            m_amplada[1] = 3;
+
+            m_gir = gir%2;
+
             break;
         case I:
-            m_figura.Create("data/Graficstetris/palblaucel1.png");
-            m_amplada = 1;
-            m_alcada = 4;
+            m_figura = new Sprite[2];
+            m_figura[0].Create("data/Graficstetris/palblaucel1.png");
+            m_figura[1].Create("data/Graficstetris/palblaucel2.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_BLAUCEL;
-            m_mascara[0][0]=true;
-            m_mascara[1][0]=true;
-            m_mascara[2][0]=true;
-            m_mascara[3][0]=true;
+
+            m_girs = 2;
+
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
+            m_mascara[0][1][0]=true;
+            m_mascara[0][2][0]=true;
+            m_mascara[0][3][0]=true;
+            m_amplada[0] = 1;
+            m_mascara[1][0][0]=true;
+            m_mascara[1][0][1]=true;
+            m_mascara[1][0][2]=true;
+            m_mascara[1][0][3]=true;
+            m_amplada[1] = 4;
+
+            m_gir = gir%2;
+
             break;
         case P:
-            m_figura.Create("data/Graficstetris/pblaufosc4.png");
-            m_amplada = 3;
-            m_alcada = 2;
+            m_figura = new Sprite[4];
+            m_figura[0].Create("data/Graficstetris/pblaufosc1.png");
+            m_figura[1].Create("data/Graficstetris/pblaufosc2.png");
+            m_figura[2].Create("data/Graficstetris/pblaufosc3.png");
+            m_figura[3].Create("data/Graficstetris/pblaufosc4.png");
+
             m_indexFig = indexFig;
             m_color = COLOR_BLAUFOSC;
-            m_mascara[0][0]=true;
-            m_mascara[1][0]=true;
-            m_mascara[1][1]=true;
-            m_mascara[1][2]=true;
+
+            m_girs = 4;
+
+            crearMascara();
+
+            m_mascara[0][0][0]=true;
+            m_mascara[0][1][0]=true;
+            m_mascara[0][2][0]=true;
+            m_mascara[0][0][1]=true;
+            m_amplada[0] = 2;
+            m_mascara[1][0][0]=true;
+            m_mascara[1][0][1]=true;
+            m_mascara[1][0][2]=true;
+            m_mascara[1][1][2]=true;
+            m_amplada[1] = 3;
+            m_mascara[2][0][1]=true;
+            m_mascara[2][1][1]=true;
+            m_mascara[2][2][1]=true;
+            m_mascara[2][2][0]=true;
+            m_amplada[2] = 2;
+            m_mascara[3][0][0]=true;
+            m_mascara[3][1][0]=true;
+            m_mascara[3][1][1]=true;
+            m_mascara[3][1][2]=true;
+            m_amplada[3] = 3;
             break;
         default:
             break;
@@ -151,7 +319,7 @@ int FigTetris::amplada()
 {
 
     // Retorna l'amplada de la figura
-    return m_amplada;
+    return m_amplada [m_gir];
 }
 
 int FigTetris::alcada()
@@ -160,6 +328,44 @@ int FigTetris::alcada()
     // Retorna l'alçada de la figura
     return m_alcada;
 }
+
+bool FigTetris::gir(Fons& fons)
+{
+    bool correcte = false;;
+    switch (m_indexFig)
+    {
+        case O:
+            correcte = true;
+            break;
+        case Z:
+        case S:
+        case I:
+
+
+
+            if (!fons.solapa(m_mascara[(m_gir + 1)%2], m_posX / MIDA_Q , m_posY / MIDA_Q, 0, 0))
+            {
+                m_gir = (m_gir + 1)%2;
+                correcte = true;
+            }
+
+            break;
+            break;
+            break;
+        default:
+            if (!fons.solapa(m_mascara[(m_gir + 1)%4], m_posX / MIDA_Q , m_posY / MIDA_Q, 0, 0))
+            {
+                m_gir = (m_gir + 1)%4;
+                correcte = true;
+            }
+
+            break;
+
+    }
+
+    return correcte;
+
+ }
 
 bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 {
@@ -180,24 +386,24 @@ bool FigTetris::moureFig(int dirX, int dirY, Fons& fons)
 
 
 
-    if ((dirX == -1) && !(fons.solapa(m_mascara, m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
+    if ((dirX == -1) && !(fons.solapa(m_mascara[m_gir], m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))) // ESQUERRA: mirem si la peca es mou a l'esquerra a partir de l'eix X
         m_posX -= MIDA_Q;
 
-    if ((dirX == 1) && !(fons.solapa(m_mascara, m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
+    if ((dirX == 1) && !(fons.solapa(m_mascara[m_gir], m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))) //DRETA: mirem si es pot moure amb coordenades + amplada i final de taulell
         m_posX += MIDA_Q;
 
     if (dirY == 1)
     {
-        if(!(fons.solapa(m_mascara, m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))) //ABAIX Normal (1 pos): mirem els límits
+        if(!(fons.solapa(m_mascara[m_gir], m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))) //ABAIX Normal (1 pos): mirem els límits
         m_posY += MIDA_Q;
-        else if (fons.solapa(m_mascara, m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))//Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
+        else if (fons.solapa(m_mascara[m_gir], m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY))//Si la peca es troba a la última fila es crida figuraEncaixada i es retorna true
         {
             figuraEncaixada(fons);
             arribada = true;
         }
     }
 
-    if ((dirY == 2) && !(fons.solapa(m_mascara, m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY) )) //ABAIX Tecla (2 pos): mirem limits
+    if ((dirY == 2) && !(fons.solapa(m_mascara[m_gir], m_posX / MIDA_Q , m_posY / MIDA_Q, dirX, dirY) )) //ABAIX Tecla (2 pos): mirem limits
         m_posY += 2 * MIDA_Q;
 
     return arribada;
@@ -213,7 +419,7 @@ void FigTetris::figuraEncaixada(Fons& fons)
         {
             for(int j = 0; j < MAX_MASCARA; j++)
             {
-                if(m_mascara[i][j])
+                if(m_mascara[m_gir][i][j])
                 {
                       fons.setTauler(m_posY / MIDA_Q + i,  m_posX / MIDA_Q  + j, m_color);
                 }
