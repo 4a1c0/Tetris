@@ -51,8 +51,12 @@
 		<Unit filename="include/FigTetris.h" />
 		<Unit filename="include/Fons.h" />
 		<Unit filename="include/GestioResultats.h" />
+		<Unit filename="include/IteradorNodeJugador.h" />
 		<Unit filename="include/Joc.h" />
+		<Unit filename="include/Jugador.h" />
+		<Unit filename="include/LlistaJugador.h" />
 		<Unit filename="include/Menu.h" />
+		<Unit filename="include/NodeJugador.h" />
 		<Unit filename="include/Resultats.h" />
 		<Unit filename="lib/debug.cpp" />
 		<Unit filename="lib/debug.h" />
@@ -76,8 +80,12 @@
 		<Unit filename="src/FigTetris.cpp" />
 		<Unit filename="src/Fons.cpp" />
 		<Unit filename="src/GestioResultats.cpp" />
+		<Unit filename="src/IteradorNodeJugador.cpp" />
 		<Unit filename="src/Joc.cpp" />
+		<Unit filename="src/Jugador.cpp" />
+		<Unit filename="src/LlistaJugador.cpp" />
 		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/NodeJugador.cpp" />
 		<Unit filename="src/Principal.cpp" />
 		<Unit filename="src/Resultats.cpp" />
 		<Extensions>

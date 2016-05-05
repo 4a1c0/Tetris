@@ -49,11 +49,12 @@ void desplacarArray(TipusJugador tMillorsJugadors[], int posicio)
 }
 
 void emplenarPosicioArray(TipusJugador& tMillorsJugadors,int punts)
-{
+{ //IMPORTANT, APROFITABLE DE CARA A LA CONTINUACIÓ
 	system("cls");
 	printf("Entra el teu nom\n");
-	scanf("%s",&(tMillorsJugadors.Nom));
-	(tMillorsJugadors).puntuacio = punts;
+	scanf("%16[^\n]",&nom);
+	fflush(stdin);
+	//IMPORTANT, APROFITABLE DE CARA A LA CONTINUACIÓ
 }
 
 void escriuRanking(TipusJugador tMillorsJugadors[])

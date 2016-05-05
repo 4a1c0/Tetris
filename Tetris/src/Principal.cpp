@@ -11,9 +11,8 @@ const char SORTIR = '4';
 
 int main()
 {
-	TipusJugador tMillorsJugadors[MAX_MILLORS_JUGADORS];
-
-	inicialitzarTaulaMillorJugadors(tMillorsJugadors);
+	Ranking rankingJugadors;
+	rankingJugadors.inicialitzar();
 
     char opcio;
     char nivell = '1';
@@ -29,14 +28,8 @@ int main()
 			case JUGAR:
 			    punts = joc(nivell-'0');
 
-				posicio = esMillorPuntuacio(tMillorsJugadors, punts);
+				rankingJugadors.afegirJugador(punts);
 
-                if (posicio>=0)
-				{
-					system("cls");
-					desplacarArray(tMillorsJugadors, posicio);
-					emplenarPosicioArray(tMillorsJugadors[posicio], punts);
-				}
 				break;
 
 			case CONFIGURAR:
@@ -50,7 +43,7 @@ int main()
 				} while((nivell != '1') && (nivell != '2') && (nivell != '3'));
 				break;
 			case PUNTUACIO:
-				escriuRanking(tMillorsJugadors);
+				rankingJugadors.escriuRanking();
 				printf("Prem una tecla per tornar al menu principal");
 				_getch();
 				break;

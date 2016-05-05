@@ -1,18 +1,17 @@
+#ifndef GESTIORESULTATS_H_INCLUDED
+#define GESTIORESULTATS_H_INCLUDED
 
-typedef struct
+class Ranking
 {
-  char Nom[15];
-  int puntuacio;
-}TipusJugador;
+    public:
+        Ranking();
+        ~Ranking();
+        void inicialitzar();
+        void afegirJugador(int punts);
+        void escriuRanking();
+    private:
+        LlistaJugadors m_rankingJugadors;
 
-const int MAX_MILLORS_JUGADORS = 5;
+};
+#endif // GESTIORESULTATS_H_INCLUDED
 
-void inicialitzarTaulaMillorJugadors(TipusJugador
-	                                 tMillorsJugadors[]);
-int  esMillorPuntuacio(TipusJugador tMillorsJugadors[],
-	                   int punts);
-void desplacarArray(TipusJugador tMillorsJugadors[],
-	                int posicio);
-void emplenarPosicioArray(TipusJugador& tMillorsJugadors,
-	                      int punts);
-void escriuRanking(TipusJugador tMillorsJugadors[]);

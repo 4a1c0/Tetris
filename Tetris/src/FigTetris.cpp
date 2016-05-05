@@ -26,7 +26,7 @@ FigTetris::~FigTetris()
 
     //destrueix sprites
     delete[] m_figura;
-
+    m_figura = NULL;
 
 }
 
