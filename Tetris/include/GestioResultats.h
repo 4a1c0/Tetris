@@ -3,6 +3,7 @@
 
 #include "LlistaJugador.h"
 
+
 class Ranking
 {
     public:
