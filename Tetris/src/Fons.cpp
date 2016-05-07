@@ -40,9 +40,9 @@ void Fons::posarNegre()
 
     // Heu d'inicialitzar totes les posicions interiors (que no són límits) de la matriu m_tauler a negre
 
-    for (int i = 0; i < MAX_FILA - 3; i++)
+    for (int i = 0; i < MAX_FILA - 1; i++)
     {
-        for (int j = 1; j < MAX_COL - 5; j++) //?? No acabo de veure lo dels límits del taulell
+        for (int j = 1; j < MAX_COL - 1; j++)
         {
             m_tauler[i][j] = COLOR_NEGRE;
         }
@@ -56,23 +56,19 @@ void Fons::posarGris()
     // Heu d'inicialitzar primera i ultima columnes de la matriu m_tauler a gris
     // Heu d'inicialitzar la última fila de la matriu m_tauler a gris
 
-    for (int i = MAX_FILA - 3; i < MAX_FILA ; i++)
-    {
-        for(int j = 3; j < MAX_COL - 3; j++)
+
+        for(int j = 0; j < MAX_COL; j++)
         {
-            m_tauler[i][j] = COLOR_GRIS;
+            m_tauler[MAX_FILA - 1][j] = COLOR_GRIS;
         }
 
-    }
 
     for(int i = 0; i < MAX_FILA; i++)
     {
-        for (int j = 0; j < 3; j++)
-        {
 
-            m_tauler[i][j] = COLOR_GRIS;
-            m_tauler[i][MAX_COL - j - 1] = COLOR_GRIS;
-        }
+
+            m_tauler[i][0] = COLOR_GRIS;
+            m_tauler[i][MAX_COL - 1] = COLOR_GRIS;
     }
 
 
@@ -90,9 +86,9 @@ void Fons::pintaFons()
 
         m_fons.Draw(0,0);
 
-        for(int i = 0; i < MAX_FILA - 3; i++)
+        for(int i = 0; i < MAX_FILA - 1; i++)
         {
-            for (int j = 1; j < MAX_COL - 5; j++)
+            for (int j = 1; j < MAX_COL - 1; j++)
             {
                 if (m_tauler[i][j] != COLOR_NEGRE)
                 {
@@ -116,13 +112,13 @@ void Fons::setTauler(int fila, int columna, int color)
 
 void Fons::moureTauler(int fila, int tauler[][MAX_COL])
 {
-    int fila_aux [MAX_COL - 5];
-    for (int j = 0; j < MAX_COL - 5; j++)
+    int fila_aux [MAX_COL];
+    for (int j = 0; j < MAX_COL; j++)
         tauler[fila][j] = COLOR_NEGRE;
 
     for(int i = fila; i > 0; i--)
     {
-        for (int j = 1; j < MAX_COL - 5; j++)
+        for (int j = 1; j < MAX_COL; j++)
         {
             fila_aux[j] = tauler[i][j];
             tauler[i][j] = tauler [i - 1][j];
@@ -145,14 +141,14 @@ bool Fons::guanyar(int &fcompletes)
 	fcompletes=0;
 
 
-    for(int i = 0; i < MAX_FILA - 3; i++)
+    for(int i = 0; i < MAX_FILA - 1; i++)
     {
         complet = true;
-        for (int j = 1; j < MAX_COL - 5; j++)
+        for (int j = 1; j < MAX_COL; j++)
         {
             if (m_tauler[i][j] == COLOR_NEGRE)
             complet = false;
-            if (j == MAX_COL - 6 && complet == true)
+            if (j == MAX_COL - 1 && complet == true)
             {
                 moureTauler(i, m_tauler);
                 fcompletes++;

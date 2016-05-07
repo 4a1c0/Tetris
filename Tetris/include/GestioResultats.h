@@ -1,6 +1,8 @@
 #ifndef GESTIORESULTATS_H_INCLUDED
 #define GESTIORESULTATS_H_INCLUDED
 
+#include "LlistaJugador.h"
+
 class Ranking
 {
     public:
@@ -10,7 +12,7 @@ class Ranking
         void afegirJugador(int punts);
         void escriuRanking();
     private:
-        LlistaJugadors m_rankingJugadors;
+        LlistaJugador m_rankingJugadors;
 
 };
 #endif // GESTIORESULTATS_H_INCLUDED

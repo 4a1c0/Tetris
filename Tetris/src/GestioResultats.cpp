@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>     /* system */
-
+/*
 void inicialitzarTaulaMillorJugadors(TipusJugador tMillorsJugadors[])
 {
 	for(int i = 0; i < MAX_MILLORS_JUGADORS; i++)
@@ -66,3 +66,5 @@ void escriuRanking(TipusJugador tMillorsJugadors[])
 	}
 
 }
+*/
+

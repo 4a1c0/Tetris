@@ -6,7 +6,7 @@ class Jugador
     public:
         Jugador();
         Jugador(char nom[], int punts);
-        ~Jugaador();
+        ~Jugador();
         int getPuntuacio();
         void printar();
     private:
