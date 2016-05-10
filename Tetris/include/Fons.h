@@ -2,9 +2,7 @@
 #define FONS_H
 
 #include "../lib/libreria.h"
-#include <iostream>
 
-using namespace std;
 
 
 //========================================================================

@@ -8,9 +8,9 @@ class NodeJugador
     public:
         NodeJugador();
         ~NodeJugador();
-        Jugador getValor() const;
+        Jugador& getValor();
         NodeJugador* getNext() const;
-        void setValor(Jugador valor);
+        void setValor(Jugador &valor);
         void setNext(NodeJugador* next);
     private:
         Jugador m_valor;

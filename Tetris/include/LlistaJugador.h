@@ -3,6 +3,8 @@
 
 #include "IteradorNodeJugador.h"
 #include "NodeJugador.h"
+#include <cstddef>
+
 
 class LlistaJugador
 {

@@ -3,6 +3,7 @@
 
 
 #include "NodeJugador.h"
+#include <cstddef>
 
 
 class IteradorNodeJugador
@@ -14,9 +15,10 @@ class IteradorNodeJugador
         Jugador &getElement() const;
         void seguent();
         bool esNul() const;
+        NodeJugador* getNode() const;
 
     private:
-        NodeJugador m_posicio;
+        NodeJugador* m_posicio;
 };
 
 
