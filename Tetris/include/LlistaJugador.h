@@ -1,9 +1,6 @@
-#ifndef LLISTAJUGADOR_H_INCLUDED
-#define LLISTAJUGADOR_H_INCLUDED
-
+#ifndef LLISTAJUGADOR_H
+#define LLISTAJUGADOR_H
 #include "IteradorNodeJugador.h"
-#include "NodeJugador.h"
-#include <cstddef>
 
 
 class LlistaJugador
@@ -12,14 +9,20 @@ class LlistaJugador
         LlistaJugador();
         ~LlistaJugador();
 
-        IteradorNodeJugador insereixNext(Jugador &valor, IteradorNodeJugador posicio);
-        IteradorNodeJugador eliminarNext(IteradorNodeJugador posicio);
+        void inicialitza();
+        void finalitza();
+
+        IteradorNodeJugador insereixNext(int valor, IteradorNodeJugador posicio);
+        void eliminaNext(IteradorNodeJugador posicio);
+
         IteradorNodeJugador getInici() const;
         bool esBuida() const;
 
+    protected:
+
     private:
-        NodeJugador *m_primer;
+        NodeJugador* m_primer;
+
 };
 
-
-#endif // LLISTAJUGADOR_H_INCLUDED
+#endif // LLISTAJUGADOR_H

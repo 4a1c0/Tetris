@@ -1,22 +1,23 @@
-#ifndef NODEJUGADOR_H_INCLUDED
-#define NODEJUGADOR_H_INCLUDED
+#ifndef NODEJUGADOR_H
+#define NODEJUGADOR_H
 
-#include "Jugador.h"
 
 class NodeJugador
 {
     public:
         NodeJugador();
         ~NodeJugador();
-        Jugador& getValor();
-        NodeJugador* getNext() const;
-        void setValor(Jugador &valor);
-        void setNext(NodeJugador* next);
+        NodeJugador* getNext(void) const;
+        void setNext(NodeJugador*);
+        int getValor(void) const;
+        void setValor(int);
+
+
+
     private:
-        Jugador m_valor;
-        NodeJugador* m_next;
 
-
+    NodeJugador* m_next;
+	int m_valor;
 };
 
-#endif // NODEJUGADOR_H_INCLUDED
+#endif // NODEJUGADOR_H

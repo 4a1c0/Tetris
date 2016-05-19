@@ -1,10 +1,8 @@
 #include "IteradorNodeJugador.h"
 
-
-
 IteradorNodeJugador::IteradorNodeJugador()
 {
-    m_posicio = NULL;
+    m_posicio = nullptr;
 }
 
 IteradorNodeJugador::IteradorNodeJugador(NodeJugador* posicio)
@@ -12,17 +10,27 @@ IteradorNodeJugador::IteradorNodeJugador(NodeJugador* posicio)
     m_posicio = posicio;
 }
 
-void IteradorNodeJugador::seguent()
+IteradorNodeJugador::~IteradorNodeJugador()
 {
-    m_posicio = m_posicio->getNext();
+    //dtor
 }
 
-bool IteradorNodeJugador::esNul() const
+void IteradorNodeJugador::seguent(void)
 {
-    return m_posicio == NULL;
+	m_posicio = m_posicio->getNext();
 }
 
-Jugador &IteradorNodeJugador::getElement() const
+int IteradorNodeJugador::getValor(void) const
 {
-    return m_posicio->getValor();
+    return m_posicio -> getValor();
+}
+
+bool IteradorNodeJugador::esNul(void) const
+{
+	return (m_posicio == nullptr);
+}
+
+NodeJugador *IteradorNodeJugador::getNode(void) const
+{
+	return m_posicio;
 }

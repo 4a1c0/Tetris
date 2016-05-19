@@ -21,10 +21,10 @@
 					<Add directory="D:/D1/_Docencia/MPGrau/Practica/Treball/TetrisVersioFinal/include" />
 				</Compiler>
 				<Linker>
-					<Add library="extlibs\libpng.a" />
-					<Add library="extlibs\libSDL2_image.a" />
-					<Add library="extlibs\SDL2.lib" />
-					<Add library="extlibs\libz.a" />
+					<Add library="extlibs/libpng.a" />
+					<Add library="extlibs/libSDL2_image.a" />
+					<Add library="extlibs/SDL2.lib" />
+					<Add library="extlibs/libz.a" />
 					<Add directory="extlibs" />
 				</Linker>
 			</Target>

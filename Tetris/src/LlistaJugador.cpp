@@ -2,67 +2,70 @@
 
 LlistaJugador::LlistaJugador()
 {
-    m_primer = NULL;
+    inicialitza();
 }
 
 LlistaJugador::~LlistaJugador()
 {
-    IteradorNodeJugador posicio(NULL);
-    while(m_primer != NULL)
-        eliminarNext(posicio);
+    finalitza();
+}
+
+void LlistaJugador::inicialitza()
+{
+	m_primer = nullptr;
+}
+
+void LlistaJugador::finalitza()
+{
+	while (m_primer != nullptr)
+	{
+		eliminaNext(IteradorNodeJugador(nullptr));
+	}
+}
+
+IteradorNodeJugador LlistaJugador::insereixNext(int valor, IteradorNodeJugador posicio)
+{
+	NodeJugador* aux;
+
+	aux = new NodeJugador  ;
+	aux->setValor(valor);
+
+	if (posicio.esNul())
+	{
+		aux->setNext(m_primer);
+		m_primer = aux;
+	}
+	else
+	{
+		aux->setNext(posicio.getNode()->getNext());
+		posicio.getNode()->setNext(aux);
+	}
+	return aux;
+}
+
+void LlistaJugador::eliminaNext(IteradorNodeJugador posicio)
+{
+	NodeJugador* aux;
+
+	if (posicio.esNul())
+	{
+		aux = m_primer;
+		m_primer = m_primer->getNext();
+	}
+	else
+	{
+		aux = posicio.getNode()->getNext();
+		posicio.getNode()->setNext(aux->getNext());
+	}
+	delete aux;
 }
 
 bool LlistaJugador::esBuida() const
 {
-    return m_primer == NULL;
+	return (m_primer == nullptr);
 }
 
 IteradorNodeJugador LlistaJugador::getInici() const
 {
-    return IteradorNodeJugador(m_primer);
-}
-
-IteradorNodeJugador LlistaJugador::insereixNext(Jugador &valor, IteradorNodeJugador posicio)
-{
-    NodeJugador* aux = new NodeJugador;
-
-    if (aux != NULL)
-    {
-        aux->setValor(valor);
-        if (posicio.esNul())
-        {
-            aux->setNext(m_primer);
-            m_primer = aux;
-        }
-        else
-        {
-            NodeJugador* actual = posicio.getNode();
-            aux->setNext(actual->getNext());
-            actual->setNext(aux);
-        }
-    }
-
-    return IteradorNodeJugador(aux);
-}
-
-IteradorNodeJugador LlistaJugador::eliminarNext(IteradorNodeJugador posicio)
-{
-    NodeJugador* aux;
-    IteradorNodeJugador itSeguent;
-    if (posicio.esNul())
-    {
-        itSeguent = IteradorNodeJugador(m_primer->getNext());
-        aux = m_primer;
-        m_primer = aux->getNext();
-        delete aux;
-    }
-    else
-    {
-        aux = posicio.getNode()->getNext();
-        itSeguent = IteradorNodeJugador(aux->getNext());
-        posicio.getNode()->setNext(aux->getNext());
-        delete aux;
-    }
-
-    return itSeguent;
+	return IteradorNodeJugador(m_primer);
 }

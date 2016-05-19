@@ -1,25 +1,21 @@
-#ifndef ITERADORNODEJUGADOR_H_INCLUDED
-#define ITERADORNODEJUGADOR_H_INCLUDED
-
-
+#ifndef ITERADORNODEJUGADOR_H
+#define ITERADORNODEJUGADOR_H
 #include "NodeJugador.h"
-#include <cstddef>
 
 
 class IteradorNodeJugador
 {
     public:
         IteradorNodeJugador();
-        IteradorNodeJugador(NodeJugador* posicio);
+        IteradorNodeJugador(NodeJugador*);
         ~IteradorNodeJugador();
-        Jugador &getElement() const;
-        void seguent();
-        bool esNul() const;
-        NodeJugador* getNode() const;
+        void seguent(void);
+        int getValor(void) const;
+        bool esNul(void) const;
+        NodeJugador *getNode(void) const;
 
     private:
         NodeJugador* m_posicio;
 };
 
-
-#endif // ITERADORNODEJUGADOR_H_INCLUDED
+#endif // ITERADORNODEJUGADOR_H

@@ -1,5 +1,10 @@
-#ifndef JUGADOR_H_INCLUDED
-#define JUGADOR_H_INCLUDED
+#ifndef JUGADOR_H
+#define JUGADOR_H
+#include <iostream>
+
+const int MAX_LONG_NOM = 17;
+
+using namespace std;
 
 class Jugador
 {
@@ -9,10 +14,10 @@ class Jugador
         ~Jugador();
         int getPuntuacio();
         void printar();
+
     private:
-        char m_nom[17];
+        char m_nom[MAX_LONG_NOM];
         int m_puntuacio;
 };
 
-
-#endif // JUGADOR_H_INCLUDED
+#endif // JUGADOR_H

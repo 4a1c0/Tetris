@@ -1,19 +1,31 @@
 #include "NodeJugador.h"
-Jugador& NodeJugador::getValor()
+
+NodeJugador::NodeJugador()
 {
-    return m_valor;
+    //ctor
 }
 
-NodeJugador* NodeJugador::getNext() const
+NodeJugador::~NodeJugador()
 {
-    return m_next;
-}
-void NodeJugador::setValor(Jugador& valor)
-{
-    m_valor =valor;
+    //dtor
 }
 
-void NodeJugador::setNext(NodeJugador* next)
+NodeJugador* NodeJugador::getNext(void) const
 {
-    m_next = next;
+	return m_next;
+}
+
+void NodeJugador::setNext(NodeJugador* node)
+{
+	m_next = node;
+}
+
+int NodeJugador::getValor(void) const
+{
+	return m_valor;
+}
+
+void NodeJugador::setValor(int valor)
+{
+	m_valor = valor;
 }
