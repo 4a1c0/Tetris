@@ -1,6 +1,7 @@
 #ifndef NODEJUGADOR_H
 #define NODEJUGADOR_H
 
+#include "Jugador.h"
 
 class NodeJugador
 {
@@ -9,15 +10,15 @@ class NodeJugador
         ~NodeJugador();
         NodeJugador* getNext(void) const;
         void setNext(NodeJugador*);
-        int getValor(void) const;
-        void setValor(int);
+        Jugador getJugador(void);
+        void setJugador(char nom[], int punts);
 
 
 
     private:
 
     NodeJugador* m_next;
-	int m_valor;
+    Jugador m_jugador;
 };
 
 #endif // NODEJUGADOR_H

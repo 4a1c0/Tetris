@@ -23,12 +23,12 @@ void LlistaJugador::finalitza()
 	}
 }
 
-IteradorNodeJugador LlistaJugador::insereixNext(int valor, IteradorNodeJugador posicio)
+IteradorNodeJugador LlistaJugador::insereixNext(char nom[], int punts, IteradorNodeJugador posicio)
 {
 	NodeJugador* aux;
 
 	aux = new NodeJugador  ;
-	aux->setValor(valor);
+	aux->setJugador(nom, punts);
 
 	if (posicio.esNul())
 	{

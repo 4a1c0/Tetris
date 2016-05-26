@@ -20,9 +20,9 @@ void IteradorNodeJugador::seguent(void)
 	m_posicio = m_posicio->getNext();
 }
 
-int IteradorNodeJugador::getValor(void) const
+Jugador IteradorNodeJugador::getJugador(void)
 {
-    return m_posicio -> getValor();
+    return m_posicio -> getJugador();
 }
 
 bool IteradorNodeJugador::esNul(void) const

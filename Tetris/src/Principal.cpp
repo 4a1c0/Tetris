@@ -11,8 +11,8 @@ const char SORTIR = '4';
 
 int main()
 {
-	//Ranking rankingJugadors; //comentat per proves
-	//rankingJugadors.inicialitzar();
+	Ranking rankingJugadors;
+	rankingJugadors.inicialitzar();
 
     char opcio;
     char nivell = '1';
@@ -20,7 +20,6 @@ int main()
 		menuPrincipal();
 		opcio = _getch();
 
-        int posicio = -1;
 		int punts;
 
 		switch(opcio)
@@ -28,8 +27,7 @@ int main()
 			case JUGAR:
 			    punts = joc(nivell-'0');
 
-				//rankingJugadors.afegirJugador(punts);
-//comentat per proves
+				rankingJugadors.afegirJugador(punts);
 				break;
 
 			case CONFIGURAR:
@@ -43,8 +41,8 @@ int main()
 				} while((nivell != '1') && (nivell != '2') && (nivell != '3'));
 				break;
 			case PUNTUACIO:
-				//rankingJugadors.escriuRanking();//comentat per proves
-				printf("Prem una tecla per tornar al menu principal");
+				rankingJugadors.escriuRanking();
+				printf("\n Prem una tecla per tornar al menu principal");
 				_getch();
 				break;
 		}

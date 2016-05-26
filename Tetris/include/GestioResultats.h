@@ -2,6 +2,9 @@
 #define GESTIORESULTATS_H_INCLUDED
 
 #include "LlistaJugador.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 class Ranking

@@ -12,7 +12,7 @@ class LlistaJugador
         void inicialitza();
         void finalitza();
 
-        IteradorNodeJugador insereixNext(int valor, IteradorNodeJugador posicio);
+        IteradorNodeJugador insereixNext(char nom[], int punts, IteradorNodeJugador posicio);
         void eliminaNext(IteradorNodeJugador posicio);
 
         IteradorNodeJugador getInici() const;

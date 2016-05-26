@@ -10,7 +10,7 @@ class IteradorNodeJugador
         IteradorNodeJugador(NodeJugador*);
         ~IteradorNodeJugador();
         void seguent(void);
-        int getValor(void) const;
+        Jugador getJugador(void);
         bool esNul(void) const;
         NodeJugador *getNode(void) const;
 

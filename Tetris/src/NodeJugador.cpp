@@ -20,12 +20,13 @@ void NodeJugador::setNext(NodeJugador* node)
 	m_next = node;
 }
 
-int NodeJugador::getValor(void) const
+Jugador NodeJugador::getJugador(void)
 {
-	return m_valor;
+
+	return m_jugador;
 }
 
-void NodeJugador::setValor(int valor)
+void NodeJugador::setJugador(char nom[], int punts)
 {
-	m_valor = valor;
+    m_jugador = Jugador(nom, punts);
 }

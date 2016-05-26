@@ -1,7 +1,7 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include <iostream>
-#include<string>
+#include<string.h>
 
 const int MAX_LONG_NOM = 17;
 
