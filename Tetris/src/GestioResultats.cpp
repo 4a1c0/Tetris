@@ -78,13 +78,13 @@ void Ranking::escriuRanking()
     cout << "----------------------------- \n";
 }
 
-void Ranking::desar(const char*)
+void Ranking::desar(const char* nomFitxer)
 {
-
+    m_rankingJugadors.desar(nomFitxer);
 }
 
-void Ranking::llegir(const char*)
+void Ranking::llegir(const char* nomFitxer)
 {
-
+    m_rankingJugadors.llegir(nomFitxer);
 }
 

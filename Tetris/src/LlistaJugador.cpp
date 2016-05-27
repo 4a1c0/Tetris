@@ -70,12 +70,26 @@ IteradorNodeJugador LlistaJugador::getInici() const
 	return IteradorNodeJugador(m_primer);
 }
 
-void LlistaJugador::desar(const char*)
+void LlistaJugador::desar(const char* fitxer)
 {
 
 }
 
-void LlistaJugador::llegir(const char*)
+void LlistaJugador::llegir(const char* nomFitxer)
 {
+    ifstream fitxer;
+    fitxer.open(nomFitxer);
 
+    if (fitxer.is_open())
+    {
+        inicialitza();
+
+        while(!fitxer.eof())
+        {
+            //llegir
+            //afegir
+        }
+
+        fitxer.close();
+    }
 }
