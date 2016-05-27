@@ -69,3 +69,13 @@ IteradorNodeJugador LlistaJugador::getInici() const
 {
 	return IteradorNodeJugador(m_primer);
 }
+
+void LlistaJugador::desar(const char*)
+{
+
+}
+
+void LlistaJugador::llegir(const char*)
+{
+
+}

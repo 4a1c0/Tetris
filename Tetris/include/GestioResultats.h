@@ -15,6 +15,8 @@ class Ranking
         void inicialitzar();
         void afegirJugador(int punts);
         void escriuRanking();
+        void desar(const char*);
+        void llegir(const char*);
     private:
         LlistaJugador m_rankingJugadors;
 

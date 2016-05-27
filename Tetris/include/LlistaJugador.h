@@ -18,6 +18,9 @@ class LlistaJugador
         IteradorNodeJugador getInici() const;
         bool esBuida() const;
 
+        void desar(const char*);
+        void llegir(const char*);
+
     protected:
 
     private:

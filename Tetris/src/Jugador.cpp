@@ -26,3 +26,13 @@ void Jugador::printar()
 {
     cout << m_nom << " ---- " << m_puntuacio << endl;
 }
+
+void Jugador::desar(ofstream&)
+{
+
+}
+
+void Jugador::llegir(ifstream&)
+{
+
+}
