@@ -12,6 +12,7 @@ class NodeJugador
         void setNext(NodeJugador*);
         Jugador getJugador(void);
         void setJugador(char nom[], int punts);
+        void setJug(Jugador jug);
 
 
 

@@ -13,10 +13,14 @@ class LlistaJugador
         void finalitza();
 
         IteradorNodeJugador insereixNext(char nom[], int punts, IteradorNodeJugador posicio);
+        IteradorNodeJugador insereixll(Jugador jugador, IteradorNodeJugador posicio);
         void eliminaNext(IteradorNodeJugador posicio);
 
         IteradorNodeJugador getInici() const;
         bool esBuida() const;
+
+        void desar(const char*);
+        void llegir(const char*);
 
     protected:
 

@@ -69,3 +69,70 @@ IteradorNodeJugador LlistaJugador::getInici() const
 {
 	return IteradorNodeJugador(m_primer);
 }
+
+IteradorNodeJugador LlistaJugador::insereixll(Jugador jugador, IteradorNodeJugador posicio)
+{
+	NodeJugador* aux;
+
+	aux = new NodeJugador();
+	aux->setJug(jugador);
+
+	if (posicio.esNul())
+	{
+		aux->setNext(m_primer);
+		m_primer = aux;
+	}
+	else
+	{
+		aux->setNext(posicio.getNode()->getNext());
+		posicio.getNode()->setNext(aux);
+	}
+	return aux;
+}
+
+void LlistaJugador::desar(const char* nomFitxer)
+{
+        ofstream fitxer;
+    fitxer.open(nomFitxer);
+
+    if (fitxer.is_open())
+    {
+        IteradorNodeJugador itJug = getInici();
+        if(!esBuida())
+        {
+            itJug.getJugador().desar(fitxer);
+            itJug.seguent();
+
+        }
+
+        while(!itJug.esNul())
+        {
+            fitxer<<"\n";
+            itJug.getJugador().desar(fitxer);
+            itJug.seguent();
+        }
+
+        fitxer.close();
+    }
+}
+
+void LlistaJugador::llegir(const char* nomFitxer)
+{
+    ifstream fitxer;
+    fitxer.open(nomFitxer);
+
+    if (fitxer.is_open())
+    {
+        IteradorNodeJugador itJug = getInici();
+
+        while(!fitxer.eof())
+        {
+            Jugador jug;
+            jug.llegir(fitxer);
+            itJug = insereixll(jug, itJug);
+
+        }
+
+        fitxer.close();
+    }
+}
