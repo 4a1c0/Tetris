@@ -7,12 +7,13 @@ const char JUGAR = '1';
 const char CONFIGURAR = '2';
 const char PUNTUACIO = '3';
 const char SORTIR = '4';
-
+const char nomFitxerJugadors[] = "LlistaJugadors.txt";
 
 int main()
 {
 	Ranking rankingJugadors;
 	rankingJugadors.inicialitzar();
+	rankingJugadors.llegir(nomFitxerJugadors);
 
     char opcio;
     char nivell = '1';
@@ -27,6 +28,7 @@ int main()
 			case JUGAR:
 			    punts = joc(nivell-'0');
 
+				if(punts > 0)
 				rankingJugadors.afegirJugador(punts);
 				break;
 
@@ -47,6 +49,8 @@ int main()
 				break;
 		}
 	}while(opcio != SORTIR);
+
+	rankingJugadors.desar(nomFitxerJugadors);
 
 	return 0;
 }

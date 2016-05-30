@@ -27,12 +27,18 @@ void Jugador::printar()
     cout << m_nom << " ---- " << m_puntuacio << endl;
 }
 
-void Jugador::desar(ofstream&)
+void Jugador::desar(ofstream& fitxer)
 {
-
+    fitxer<<m_nom<<"\n";
+    fitxer<<m_puntuacio;
 }
 
-void Jugador::llegir(ifstream&)
+void Jugador::llegir(ifstream& fitxer)
 {
-
+    fitxer.getline(m_nom,MAX_LONG_NOM,'\n');
+    cout << m_nom;
+    fitxer >> m_puntuacio;
+    char c[2];
+    fitxer.getline(c,2,'\n');
 }
+

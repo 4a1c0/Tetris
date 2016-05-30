@@ -476,7 +476,7 @@
 1464337176 source:c:\users\pau\documents\github\tetris\tetris\src\fons.cpp
 	"Fons.h"
 
-1464338955 source:c:\users\pau\documents\github\tetris\tetris\src\gestioresultats.cpp
+1464610401 source:c:\users\pau\documents\github\tetris\tetris\src\gestioresultats.cpp
 	"GestioResultats.h"
 
 1464338148 c:\users\pau\documents\github\tetris\tetris\include\gestioresultats.h
@@ -485,18 +485,19 @@
 	<stdio.h>
 	<stdlib.h>
 
-1464337512 c:\users\pau\documents\github\tetris\tetris\include\llistajugador.h
+1464609996 c:\users\pau\documents\github\tetris\tetris\include\llistajugador.h
 	"IteradorNodeJugador.h"
 
 1464337176 c:\users\pau\documents\github\tetris\tetris\include\iteradornodejugador.h
 	"NodeJugador.h"
 
-1464337176 c:\users\pau\documents\github\tetris\tetris\include\nodejugador.h
+1464609658 c:\users\pau\documents\github\tetris\tetris\include\nodejugador.h
 	"Jugador.h"
 
-1464337439 c:\users\pau\documents\github\tetris\tetris\include\jugador.h
+1464609658 c:\users\pau\documents\github\tetris\tetris\include\jugador.h
 	<iostream>
 	<fstream>
+	<string>
 
 1462466440 source:c:\users\pau\documents\github\tetris\tetris\src\joc.cpp
 	"Joc.h"
@@ -513,7 +514,7 @@
 1462466440 c:\users\pau\documents\github\tetris\tetris\include\resultats.h
 	"../lib/libreria.h"
 
-1464337434 source:c:\users\pau\documents\github\tetris\tetris\src\jugador.cpp
+1464609658 source:c:\users\pau\documents\github\tetris\tetris\src\jugador.cpp
 	"Jugador.h"
 
 1462466440 source:c:\users\pau\documents\github\tetris\tetris\src\menu.cpp
@@ -523,10 +524,10 @@
 	<stdio.h>
 	<stdlib.h>
 
-1464337176 source:c:\users\pau\documents\github\tetris\tetris\src\nodejugador.cpp
+1464609658 source:c:\users\pau\documents\github\tetris\tetris\src\nodejugador.cpp
 	"NodeJugador.h"
 
-1464337176 source:c:\users\pau\documents\github\tetris\tetris\src\principal.cpp
+1464610162 source:c:\users\pau\documents\github\tetris\tetris\src\principal.cpp
 	"Menu.h"
 	"Joc.h"
 	"GestioResultats.h"
@@ -538,6 +539,6 @@
 1464337176 source:c:\users\pau\documents\github\tetris\tetris\src\iteradornodejugador.cpp
 	"IteradorNodeJugador.h"
 
-1464289285 source:c:\users\pau\documents\github\tetris\tetris\src\llistajugador.cpp
+1464609716 source:c:\users\pau\documents\github\tetris\tetris\src\llistajugador.cpp
 	"LlistaJugador.h"
 

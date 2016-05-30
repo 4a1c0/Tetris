@@ -50,9 +50,10 @@ void Ranking::afegirJugador(int punts)
             }
         else
             {
-                actItJug = m_rankingJugadors.insereixNext(nom, punts, antItJug);
+
                 antItJug=actItJug;
                 actItJug.seguent();
+                antItJug = m_rankingJugadors.insereixNext(nom, punts, antItJug);
 
             }
 
@@ -66,16 +67,16 @@ void Ranking::escriuRanking()
 
     IteradorNodeJugador ItJug = m_rankingJugadors.getInici();
     int pos = 1;
-	cout << "---- Millors Puntuacions ---- \n";
+	cout << "---- Millors Puntuacions ---- \n \n";
 
     while((!m_rankingJugadors.esBuida()) && (!ItJug.esNul()))
     {
-        cout << endl << pos<<".- ";
+        cout << pos<<".- ";
         ItJug.getNode()->getJugador().printar();
         pos++;
         ItJug.seguent();
     }
-    cout << "----------------------------- \n";
+    cout << "\n----------------------------- \n";
 }
 
 void Ranking::desar(const char* nomFitxer)

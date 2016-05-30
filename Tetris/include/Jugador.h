@@ -2,6 +2,7 @@
 #define JUGADOR_H
 #include <iostream>
 #include <fstream>
+#include <string>
 
 const int MAX_LONG_NOM = 17;
 

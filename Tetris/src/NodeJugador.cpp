@@ -30,3 +30,8 @@ void NodeJugador::setJugador(char nom[], int punts)
 {
     m_jugador = Jugador(nom, punts);
 }
+
+void NodeJugador::setJug(Jugador jug)
+{
+    m_jugador = jug;
+}
